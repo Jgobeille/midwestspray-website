@@ -1,331 +1,211 @@
 import React from 'react';
-import { Link } from 'gatsby';
+import { graphql, Link } from 'gatsby';
+import Img from 'gatsby-image';
 
+import { StaticImage } from 'gatsby-plugin-image';
 import Layout from 'src/components/Layout';
 import TestImage1 from 'src/images/test-image-1.jpg';
 import TestImage2 from 'src/images/test-image-2.jpg';
 import TestImage3 from 'src/images/test-image-3.jpg';
-import FarmProduct1 from 'src/images/farm-product-1.jpg';
-import FarmProduct2 from 'src/images/farm-product-2.jpg';
-import FarmImage from 'src/images/simplicity-farms.jpg';
-import StripeImage1 from 'src/images/logo-stripe.png';
-import GastbyIcon from 'src/images/gatsby-icon.png';
-import TailwindIcon from 'src/images/tailwind.png';
-import SEO from 'src/components/SEO';
+import TitanLogo from 'src/images/titan-industrial.jpeg';
+import SpeefloLogo from 'src/images/speeflo-logo.png';
+import WagnerLogo from 'src/images/wagner-logo.png';
+import EatonLogo from 'src/images/eaton-air-compressor-2.png';
+import CATLogo from 'src/images/cat logo.png';
 
-const IndexPage = () => (
+import PaintSprayer from 'src/images/paint-sprayer-transparent.png';
+
+import StripeImage1 from 'src/images/logo-stripe.png';
+
+import SEO from 'src/components/SEO';
+import SpraymanImage from '../components/SpraymanImage';
+
+const IndexPage = ({ data }) => (
   <Layout>
     <SEO title="Home" />
 
-    <div className="max-w-6xl p-2 mt-4 sm:m-auto sm:p-12">
+    <div className="max-w-6xl pl-12 pr-12 pb-12 pt-20 mt-4 sm:m-auto ">
       <div className="flex flex-col pb-10 border-b-2 md:flex-row">
         <div className="flex flex-col justify-center max-w-md md:w-1/2">
-          <div className="text-2xl font-black uppercase md:text-5xl text-primary">
-            <span className="">
-              Quality Theme, Home-Grown From
-              <span class="tooltip">
-                <img
-                  alt="card img"
-                  className="inline-block w-10 p-1 mx-4 rounded shadow-sm"
-                  src={GastbyIcon}
-                ></img>
-                <span class="tooltip-text bg-blue-200 p-1 rounded">
-                  GatsbyJS
-                </span>
-              </span>
-              and
-              <span class="tooltip">
-                <img
-                  alt="card img"
-                  className="inline-block w-10 p-1 mx-4 rounded shadow-sm"
-                  src={TailwindIcon}
-                ></img>
-                <span class="tooltip-text bg-blue-200 p-1 rounded">
-                  TailWindCSS
-                </span>
-              </span>
+          <div className="text-2xl font-main font-black md:text-5xl text-primary">
+            <span className="animate-spin">
+              Local repair shop located in Cincinnati, Ohio
             </span>
           </div>
-          <div className="mt-4 text-xl">
-            Founded in 2020, Simplicity Farms has been growing high-quality,
-            sustainable rice for the market.
+          <div className="mt-4 font-secondary text-xl">
+            Midwest Spray has been serving the paint spray, pressure washer and
+            compressor equipments markets in the Cincinnati area since 1984
           </div>
           <div className="h-16 my-5 mt-10">
             <Link
               to="/our-story"
-              className="w-48 px-4 py-2 text-lg font-medium text-center text-yellow-100 rounded shadow-md cursor-pointer hover:no-underline bg-orange hover:bg-orange-dark"
+              className="px-4 font-main py-2 text-white rounded-sm shadow-sm sm:relative sm:top-4 bg-celadon-blue-default hover:no-underline hover:bg-celadon-blue-dark"
             >
               Learn Our Story
             </Link>
           </div>
         </div>
         {/* Hero Section */}
-        <div className="flex w-full -mt-5 md:justify-end md:w-1/2">
-          <div className="bg-dots">
-            <div className="z-10 max-w-md mt-6 ml-4 rounded-full shadow-2xl">
-              <img alt="card img" className="rounded-t" src={FarmImage}></img>
-              <div className="p-10 text-2xl bg-white">
-                <img
-                  alt="quote"
-                  className="float-left mr-1"
-                  src="https://assets-global.website-files.com/5b5a66e9f3166b36708705fa/5cf8fb1f994fb7168d0d66fb_quote-intro.svg"
-                ></img>{' '}
-                Our dream with Simplicity Farms is to grow the truest, and
-                highest quality rice in the world.
-                <p className="mt-4 text-sm">- Andrew Carnegie, Founder</p>
-              </div>
-            </div>
-          </div>
+        <div className="flex flex-col w-full -mt-5 md:justify-center md:items-center md:w-1/2">
+          <div className="animate-spin1 absolute bg-minion-yellow-500 w-48 h-48 rounded"></div>
+          <div className="animate-spin2 absolute bg-minion-yellow-500 w-48 h-48 rounded"></div>
+          <div className="animate-spin3 absolute bg-minion-yellow-500 w-48 h-48 rounded"></div>
+          <SpraymanImage />
+          <div className="relative h-px w-20 -mb-10 animate-float-with-shadow  text-ghost-white"></div>
         </div>
       </div>
-      {/* Our Farm Section */}
-      <div className="container pt-2 pb-6 mx-auto border-b-2">
-        <h1 className="py-4 text-center font-slim text-primary">Our Farm</h1>
-        <div className="flex justify-center px-6 my-4">
-          <div className="w-60 md:w-full md:flex-row sm:flex-col">
-            <div className="flex w-full p-4 mr-2 bg-white rounded shadow-xl md:h-auto sm:h-40">
-              <img
-                className="w-full h-auto bg-gray-400 bg-cover rounded"
-                src={FarmImage}
-                alt=""
-              ></img>
-            </div>
-            <div className="w-full p-5 bg-white">
-              <div className="mb-4 text-center sm:px-8">
-                <h3 className="pt-4 mb-2 text-2xl">Farm Name Here</h3>
-                <p className="mb-4 text-sm text-gray-700">
-                  Description of the farm location and little backstory, what
-                  the farm does and grows etc.
-                </p>
-              </div>
-              <div className="px-8 pt-6 pb-8 mb-4 bg-white rounded">
-                <hr className="mb-6 border-t" />
-                <div className="text-center">
-                  <Link
-                    className="inline-block text-sm text-blue-500 align-baseline hover:text-blue-800"
-                    to="./index.html"
-                  >
-                    Find Us On Google Maps!
-                  </Link>
-                </div>
-              </div>
-            </div>
+      {/* Warranty Section*/}
+      <h1 className="py-4 text-center font-slim text-primary">
+        Warranty Service Center for
+      </h1>
+      {/* <div className="relative left-50 right-50 -ml-50 -mr-50 pt-2 pb-6 mx-auto border-b-2"> */}
+      <div className="pt-2 pb-6 mx-auto border-b-2">
+        <div className="flex justify-center px-6 my-4 overflow-hidden">
+          <div class=" flex flex-row animate-scroll slide-track ">
+            <img src={TitanLogo} height="200" width="250" alt="" />
+            <img src={SpeefloLogo} height="200" width="250" alt="" />
+            <img src={WagnerLogo} height="200" width="250" alt="" />
+            <img src={EatonLogo} height="200" width="250" alt="" />
+            <img src={CATLogo} height="200" width="250" alt="" />
+            <img src={TitanLogo} height="200" width="250" alt="" />
+            <img src={SpeefloLogo} height="200" width="250" alt="" />
+            <img src={WagnerLogo} height="200" width="250" alt="" />
+            <img src={EatonLogo} height="200" width="250" alt="" />
+            <img src={CATLogo} height="200" width="250" alt="" />
           </div>
         </div>
       </div>
       {/* Our Products Section */}
-      <div className="container pt-2 pb-6 mx-auto mt-2 border-b-4 sm:block">
-        <h1 className="py-4 text-center font-slim text-brown">Our Products</h1>
-        <div className="flex flex-wrap justify-center px-6 my-4 md:flex-row sm:w-auto">
-          {/* Products Here*/}
-          <div className="product sm:max-w-sm">
-            <img
-              className="w-full"
-              src={FarmProduct2}
-              alt="Plate of rice"
-            ></img>
-            <div className="px-6 py-4">
-              <div className="mb-2 text-xl font-bold">
-                Simplicity Farms Original Rice
-              </div>
-              <p className="mb-4 text-base text-gray-600">
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                Voluptatibus quia, nulla! Maiores et perferendis eaque,
-                exercitationem praesentium nihil.
-              </p>
+      <div className=" pt-2 pb-6  mt-2 border-b-4 sm:block">
+        <h1 className="py-4 text-center text-primary font-slim text-brown">
+          What We Repair
+        </h1>
+        <div className="flex flex-col pb-10 md:flex-row">
+          <div className="flex flex-col mr-16 justify-center max-w-md md:w-1/2">
+            <div className=" font-alt font-black md:text-2xl text-primary">
+              <h3 className="">PAINT SPRAYERS</h3>
             </div>
-            <button className="flex px-4 py-2 mb-3 ml-6 text-sm font-bold text-white rounded shadow-sm sm:text-base bg-orange hover:bg-orange-dark">
-              Buy With Stripe
-              <img className="w-6 ml-3 shadow-sm" src={StripeImage1}></img>
-            </button>
-            <div className="flex flex-col px-6 py-4 sm:flex-row">
-              <span className="w-20 mb-4 mr-2 text-white sm:w-auto prd-tag bg-primary sm:mb-0">
-                $1,250
-              </span>
-              <span className="w-20 mr-2 text-white sm:w-auto prd-tag bg-brown-light">
-                25KG
-              </span>
-              <span className="hidden mr-2 text-gray-600 bg-gray-100 md:block prd-tag">
-                #organic
-              </span>
-              <span className="hidden text-gray-600 bg-gray-100 md:block prd-tag">
-                #farming
-              </span>
+            <div className="mt-4 font-secondary text-md">
+              Hey, whatcha watching? Fatal. Daddy Bender, we're hungry. This is
+              the worst kind of discrimination: the kind against me! Too much
+              work. Let's burn it and say we dumped it in the sewer.
+            </div>
+            <div className="mt-8">
+              <Link
+                to="/contact"
+                className="px-4 mt-8 font-main py-2 text-white rounded-sm shadow-sm  sm:top-4 bg-celadon-blue-default hover:no-underline hover:bg-celadon-blue-dark"
+              >
+                Get a Quote
+              </Link>
             </div>
           </div>
-          <div className="product sm:max-w-sm">
-            <img
-              className="w-full"
-              src={FarmProduct2}
-              alt="Plate of rice"
-            ></img>
-            <div className="px-6 py-4">
-              <div className="mb-2 text-xl font-bold">
-                Simplicity Farms Original Rice
-              </div>
-              <p className="mb-4 text-base text-gray-600">
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                Voluptatibus quia, nulla! Maiores et perferendis eaque,
-                exercitationem praesentium nihil.
-              </p>
+          <div
+            data-sal="slide-left"
+            data-sal-duration="500"
+            data-sal-delay="300"
+            data-sal-easing="ease"
+            className="flex flex-col  max-w-md md:w-1/2"
+          >
+            <img className="h-full" src={PaintSprayer} alt="" />
+          </div>
+        </div>
+        <div className="flex flex-col pb-10 md:flex-row">
+          <div
+            data-sal="slide-right"
+            data-sal-duration="500"
+            data-sal-delay="300"
+            data-sal-easing="ease"
+            className="flex flex-col  max-w-md md:w-1/2"
+          >
+            <img className="h-full" src={PaintSprayer} alt="" />
+          </div>
+          <div className="flex flex-col ml-16 justify-center max-w-md md:w-1/2">
+            <div className=" font-alt font-black md:text-2xl text-primary">
+              <h3 className="">AIR COMPRESSORS</h3>
             </div>
-            <button className="flex px-4 py-2 mb-3 ml-6 text-sm font-bold text-white rounded shadow-sm sm:text-base bg-orange hover:bg-orange-dark">
-              Buy With Stripe
-              <img className="w-6 ml-3 shadow-sm" src={StripeImage1}></img>
-            </button>
-            <div className="flex flex-col px-6 py-4 sm:flex-row">
-              <span className="w-20 mb-4 mr-2 text-white sm:w-auto prd-tag bg-primary sm:mb-0">
-                $2,500
-              </span>
-              <span className="w-20 mr-2 text-white sm:w-auto prd-tag bg-brown-light">
-                50KG
-              </span>
-              <span className="hidden mr-2 text-gray-600 bg-gray-100 md:block prd-tag">
-                #organic
-              </span>
-              <span className="hidden text-gray-600 bg-gray-100 md:block prd-tag">
-                #farming
-              </span>
+            <div className="mt-4 font-secondary text-md">
+              Hey, whatcha watching? Fatal. Daddy Bender, we're hungry. This is
+              the worst kind of discrimination: the kind against me! Too much
+              work. Let's burn it and say we dumped it in the sewer.
+            </div>
+          </div>
+        </div>
+        <div className="flex flex-col pb-10 md:flex-row">
+          <div className="flex flex-col mr-16 justify-center max-w-md md:w-1/2">
+            <div className=" font-alt font-black md:text-2xl text-primary">
+              <h3 className="">GENERATORS</h3>
+            </div>
+            <div className="mt-4 font-secondary text-md">
+              Hey, whatcha watching? Fatal. Daddy Bender, we're hungry. This is
+              the worst kind of discrimination: the kind against me! Too much
+              work. Let's burn it and say we dumped it in the sewer.
+            </div>
+          </div>
+          <div
+            data-sal="slide-left"
+            data-sal-duration="500"
+            data-sal-delay="300"
+            data-sal-easing="ease"
+            className="flex flex-col  max-w-md md:w-1/2"
+          >
+            <img className="h-full" src={PaintSprayer} alt="" />
+          </div>
+        </div>
+        <div className="flex flex-col pb-10 md:flex-row">
+          <div
+            data-sal="slide-right"
+            data-sal-duration="500"
+            data-sal-delay="300"
+            data-sal-easing="ease"
+            className="flex flex-col  max-w-md md:w-1/2"
+          >
+            <img className="h-full" src={PaintSprayer} alt="" />
+          </div>
+          <div className="flex flex-col ml-16 justify-center max-w-md md:w-1/2">
+            <div className=" font-alt font-black md:text-2xl text-primary">
+              <h3 className="">CONSTRUCTION HEATERS</h3>
+            </div>
+            <div className="mt-4 font-secondary text-md">
+              Hey, whatcha watching? Fatal. Daddy Bender, we're hungry. This is
+              the worst kind of discrimination: the kind against me! Too much
+              work. Let's burn it and say we dumped it in the sewer.
             </div>
           </div>
         </div>
       </div>
       {/* What People Are Saying Section */}
-      <div className="py-16 mt-32 bg-indigo-100">
+      <h1 className="py-4 text-center text-primary font-slim text-brown">
+        Have a Question?
+      </h1>
+      <div className="py-16 bg-turquoise-blue-500 rounded-md">
         <div className="container px-4 mx-auto">
-          <h3 className="mb-3 text-3xl font-extrabold leading-tight text-center">
-            What People Are Saying About Simplicity Farms
-          </h3>
-          <hr className="w-64 h-1 p-0 m-0 mx-auto mb-10 opacity-25 gradient" />
-          <div className="flex flex-wrap justify-center -mx-4">
-            <div className="w-full px-4 lg:w-1/3">
-              <div className="flex -mx-4">
-                <div className="px-4 ">
-                  <div className="p-4 bg-white rounded-lg shadow">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                    do eiusmod tempor incididunt ut labore et dolore magna
-                    aliqua. Arcu odio ut sem nulla pharetra. Rhoncus aenean vel
-                    elit scelerisque mauris pellentesque pulvinar.
-                  </div>
-                  <div className="ml-4 -mt-1">
-                    <svg
-                      height="20"
-                      width="20"
-                      viewBox="0, 0, 20, 20"
-                      className="text-white"
-                    >
-                      <polygon
-                        points="0,0 20,0 10,20"
-                        className="triangle"
-                        fill="currentColor"
-                      ></polygon>
-                    </svg>
-                  </div>
-                  <div className="flex mt-2">
-                    <div className="flex-shrink-0 w-16 text-center">
-                      <img
-                        className="rounded-full"
-                        src={TestImage1}
-                        alt=""
-                      ></img>
-                    </div>
-                    <p className="ml-2 font-bold">
-                      <Link target="_blank" href="https://www.example.com/">
-                        Bob James
-                        <br />
-                        Founder of OrgFarm
-                      </Link>
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className="w-full px-4 mt-6 lg:w-1/3 lg:mt-0">
-              <div className="flex -mx-4">
-                <div className="px-4 ">
-                  <div className="p-4 bg-white rounded-lg shadow">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                    do eiusmod tempor incididunt ut labore et dolore magna
-                    aliqua. Arcu odio ut sem nulla pharetra. Rhoncus aenean vel
-                    elit scelerisque mauris pellentesque pulvinar.
-                  </div>
-                  <div className="ml-4 -mt-1">
-                    <svg
-                      height="20"
-                      width="20"
-                      viewBox="0, 0, 20, 20"
-                      className="text-white"
-                    >
-                      <polygon
-                        points="0,0 20,0 10,20"
-                        className="triangle"
-                        fill="currentColor"
-                      ></polygon>
-                    </svg>
-                  </div>
-                  <div className="flex mt-2">
-                    <div className="flex-shrink-0 w-16 text-center">
-                      <img
-                        className="rounded-full"
-                        src={TestImage2}
-                        alt=""
-                      ></img>
-                    </div>
-                    <p className="ml-2 font-bold ">
-                      <Link target="_blank" href="https://www.example.com/">
-                        Arnaud Pencis
-                        <br />
-                        Founder of Y-Produce
-                      </Link>
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
+          <label htmlFor="first name">First Name</label>
+          <br />
+          <input type="text" placeholder="Hugh" className="rounded-sm" />
 
-            <div className="w-full px-4 mt-6 lg:w-1/3 lg:mt-0">
-              <div className="flex -mx-4">
-                <div className="px-4">
-                  <div className="p-4 pt-4 bg-white rounded-lg shadow lg:pb-10">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                    do eiusmod tempor incididunt ut labore et dolore magna
-                    aliqua. Arcu odio ut sem nulla pharetra. Rhoncus aenean vel
-                    elit scelerisque mauris pellentesque pulvinar.
-                  </div>
-                  <div className="ml-4 -mt-1">
-                    <svg
-                      height="20"
-                      width="20"
-                      viewBox="0, 0, 20, 20"
-                      className="text-white"
-                    >
-                      <polygon
-                        points="0,0 20,0 10,20"
-                        className="triangle"
-                        fill="currentColor"
-                      ></polygon>
-                    </svg>
-                  </div>
-                  <div className="flex mt-2">
-                    <div className="flex-shrink-0 w-16 text-center">
-                      <img
-                        className="rounded-full"
-                        src={TestImage3}
-                        alt=""
-                      ></img>
-                    </div>
-                    <p className="ml-2 font-bold ">
-                      <Link target="_blank" href="https://www.goreminders.com/">
-                        Lacey Turner
-                        <br />
-                        Founder of Ton Farms
-                      </Link>
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+          <label htmlFor="last name">Last Name</label>
+          <br />
+          <input type="text" placeholder="Jazz" className="rounded-sm" />
+
+          <label htmlFor="email">Email </label>
+          <br />
+          <input
+            type="email"
+            placeholder="hughJazz@gmail.com"
+            className="rounded-sm"
+          />
+
+          <label htmlFor="company name">Company Name</label>
+          <br />
+          <input
+            type="text"
+            placeholder="Hugh's Jazz Company"
+            className="rounded-sm"
+          />
+
+          <label htmlFor="how can we help?">How can we help?</label>
+          <br />
+          <input type="text" className="rounded-sm" />
         </div>
       </div>
     </div>

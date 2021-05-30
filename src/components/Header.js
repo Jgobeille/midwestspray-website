@@ -1,18 +1,23 @@
 import { Link } from 'gatsby';
 import PropTypes from 'prop-types';
 import React, { useState } from 'react';
-import mainLogo from '../images/logo.png';
+import mainLogo from '../images/midwest-spray-logo.png';
 
 function Header({ siteTitle }) {
   const [isExpanded, toggleExpansion] = useState(false);
 
   return (
-    <nav className="sticky top-0 w-full mt-0 bg-white shadow-sm">
+    <nav className="sticky top-0 w-full mt-0 bg-ghost-white shadow-sm z-10">
       <div className="container flex flex-wrap items-center justify-between mx-auto">
         <Link to="/" className="">
           <div className="no-underline opacity-100 hover:text-white hover:no-underline">
             <span className="pl-2 text-2xl text-blue">
-              <img alt="Simplicity Farms" className="inline w-48" src={mainLogo} />
+              <img
+                className="absolute"
+                alt="Simplicity Farms"
+                className="inline w-48"
+                src={mainLogo}
+              />
               {/* {siteTitle} */}
             </span>
           </div>
@@ -25,27 +30,27 @@ function Header({ siteTitle }) {
           {[
             {
               route: `/our-story`,
-              title: `Our Story`,
+              title: `Home`,
             },
             {
               route: `/our-team`,
-              title: `Our Team`,
+              title: `Equipment`,
             },
             {
               route: `/our-farm`,
-              title: `Our Farm`,
+              title: `About`,
             },
             {
               route: `/our-blog`,
-              title: `Our Blog`,
+              title: `Dougs Blog`,
             },
             {
               route: `/our-products`,
-              title: `Our Products`,
+              title: `Services`,
             },
           ].map((link) => (
             <Link
-              className="block mt-4 font-light hover:text-secondary text-slim text-primary hover:text-black hover:no-underline md:inline-block md:mt-0 md:ml-6"
+              className="block mt-4 font-main hover:text-secondary text-slim text-primary hover:text-black hover:no-underline md:inline-block md:mt-0 md:ml-6"
               key={link.title}
               to={link.route}
             >
@@ -54,9 +59,9 @@ function Header({ siteTitle }) {
           ))}
           <Link
             to="/contact"
-            className="px-4 py-2 ml-6 text-white rounded shadow-sm sm:relative sm:top-4 hover:no-underline bg-orange hover:bg-orange-dark"
+            className="px-4 font-main py-2 ml-6 text-white rounded-sm shadow-sm sm:relative sm:top-4 hover:no-underline bg-celadon-blue-default hover:bg-celadon-blue-dark"
           >
-            <span className="">Contact Us</span>
+            <span className="main-font">Contact Us</span>
           </Link>
         </div>
         <div className="block lg:hidden">
@@ -115,7 +120,7 @@ function Header({ siteTitle }) {
                     },
                   ].map((link) => (
                     <Link
-                      className="block px-4 py-2 font-light leading-1 hover:text-secondary text-slim text-primary hover:text-black focus:bg-gray-100 focus:text-secondary hover:no-underline"
+                      className="block font-main px-4 py-2 font-light leading-1 hover:text-secondary text-slim text-primary hover:text-black focus:bg-gray-100 focus:text-secondary hover:no-underline"
                       key={link.title}
                       to={link.route}
                     >

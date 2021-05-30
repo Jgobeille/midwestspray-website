@@ -5,8 +5,14 @@
    (Things like @font-face declarations, styles for `h1`, `p`, etc.)
 */
 
+@import url('https://fonts.googleapis.com/css2?family=Oswald&family=Pattaya&family=Prompt&display=swap');
+
+body {
+  @apply bg-ghost-white;
+}
+
 h1 {
-  @apply text-4xl font-bold font-display mb-6;
+  @apply text-4xl font-bold font-main mb-6;
 }
 
 p {
@@ -50,5 +56,5 @@ a:focus {
 }
 
 .head-3 {
- @apply py-4 mb-2 text-xl font-bold;
+  @apply py-4 mb-2 text-xl font-bold;
 }

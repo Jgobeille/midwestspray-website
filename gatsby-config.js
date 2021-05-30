@@ -1,7 +1,8 @@
 module.exports = {
   siteMetadata: {
     title: 'Simplicity Itself',
-    description: 'A Simple, Free Gatsby/TailwindCSS Starter Theme For Business Websites',
+    description:
+      'A Simple, Free Gatsby/TailwindCSS Starter Theme For Business Websites',
     author: 'https://PlanFlow.dev',
     company: 'Your Company Name Here',
   },
@@ -16,8 +17,10 @@ module.exports = {
         path: `${__dirname}/src/images`,
       },
     },
+    `gatsby-plugin-image`,
     'gatsby-transformer-sharp',
     'gatsby-plugin-sharp',
+    `gatsby-plugin-scroll-reveal`,
     // {
     //   resolve: 'gatsby-background-image-es5',
     //   options: {
