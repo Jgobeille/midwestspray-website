@@ -178,34 +178,72 @@ const IndexPage = ({ data }) => (
         Have a Question?
       </h1>
       <div className="py-16 bg-turquoise-blue-500 rounded-md">
-        <div className="container px-4 mx-auto">
-          <label htmlFor="first name">First Name</label>
-          <br />
-          <input type="text" placeholder="Hugh" className="rounded-sm" />
-
-          <label htmlFor="last name">Last Name</label>
-          <br />
-          <input type="text" placeholder="Jazz" className="rounded-sm" />
-
-          <label htmlFor="email">Email </label>
-          <br />
-          <input
-            type="email"
-            placeholder="hughJazz@gmail.com"
-            className="rounded-sm"
-          />
-
-          <label htmlFor="company name">Company Name</label>
-          <br />
-          <input
-            type="text"
-            placeholder="Hugh's Jazz Company"
-            className="rounded-sm"
-          />
-
-          <label htmlFor="how can we help?">How can we help?</label>
-          <br />
-          <input type="text" className="rounded-sm" />
+        <div className="container  px-16 mx-auto ">
+          <form className="grid gap-2 md:grid-cols-2" action="POST">
+            <div>
+              <label htmlFor="first name">First Name</label>
+              <br />
+              <input
+                type="text"
+                placeholder="Hugh"
+                className="rounded-sm form-input w-full border-0"
+              />
+            </div>
+            <div>
+              <label htmlFor="last name">Last Name</label>
+              <br />
+              <input
+                type="text"
+                placeholder="Jazz"
+                className="rounded-sm form-input w-full border-0"
+              />
+            </div>
+            <div>
+              <label htmlFor="email">Email </label>
+              <br />
+              <input
+                type="email"
+                placeholder="hughJazz@gmail.com"
+                className="rounded-sm form-input w-full border-0"
+              />
+            </div>
+            <div>
+              <label htmlFor="company name">Company Name</label>
+              <br />
+              <input
+                type="text"
+                placeholder="Hugh's Jazz Company"
+                className="rounded-sm form-input w-full border-0"
+              />
+            </div>
+            <div className="col-span-2">
+              <label htmlFor="how can we help?">How can we help?</label>
+              <br />
+              <select className="rounded-sm form-input w-full border-0 ">
+                <option value="Need a quote">I need a quote</option>
+                <option value="General Inquiry">
+                  I have a general inquiry
+                </option>
+                <option value="Service call">Service call</option>
+              </select>
+            </div>
+            <div className="col-span-2">
+              <label htmlFor="message">Message</label>
+              <br />
+              <textarea
+                name="message"
+                className="rounded-sm w-full h-full border-0"
+              ></textarea>
+            </div>
+            <div className="mt-10">
+              <Link
+                to="/contact"
+                className="px-4 mt-8 font-secondary py-2 text-black bg-white rounded-sm shadow-sm  sm:top-4  hover:no-underline"
+              >
+                Submit
+              </Link>
+            </div>
+          </form>
         </div>
       </div>
     </div>

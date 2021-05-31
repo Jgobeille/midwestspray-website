@@ -229,5 +229,6 @@ module.exports = {
     require('@tailwindcss/custom-forms'),
     require('tailwindcss-responsive-embed'),
     require('tailwindcss-aspect-ratio'),
+    require('@tailwindcss/forms'),
   ],
 };
