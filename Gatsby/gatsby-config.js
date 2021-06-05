@@ -1,10 +1,14 @@
+const dotenv = require('dotenv');
+
+dotenv.config({ path: '.env' });
+
 module.exports = {
   siteMetadata: {
-    title: 'Simplicity Itself',
+    title: 'Midwest Spray',
     description:
       'A Simple, Free Gatsby/TailwindCSS Starter Theme For Business Websites',
-    author: 'https://PlanFlow.dev',
-    company: 'Your Company Name Here',
+    author: 'Jamie Gobeille',
+    company: 'Midwest Spray',
   },
   plugins: [
     'gatsby-plugin-postcss',
@@ -21,13 +25,6 @@ module.exports = {
     'gatsby-transformer-sharp',
     'gatsby-plugin-sharp',
     `gatsby-plugin-scroll-reveal`,
-    // {
-    //   resolve: 'gatsby-background-image-es5',
-    //   options: {
-    //     // add your own characters to escape, replacing the default ':/'
-    //     specialChars: '/:',
-    //   },
-    // },
     {
       resolve: 'gatsby-plugin-manifest',
       options: {
@@ -40,6 +37,21 @@ module.exports = {
         icon: 'src/images/icon.png', // This path is relative to the root of the site.
       },
     },
+    {
+      resolve: `gatsby-source-sanity`,
+      options: {
+        projectId: `wgpo4u84`,
+        dataset: `production`,
+        // a token with read permissions is required
+        // if you have a private dataset
+        token: process.env.SANITY_TOKEN,
+
+        // If the Sanity GraphQL API was deployed using `--tag <name>`,
+        // use `graphqlTag` to specify the tag name. Defaults to `default`.
+        graphqlTag: 'default',
+      },
+    },
+
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // 'gatsby-plugin-offline',

@@ -6,8 +6,7 @@
  */
 
 import React from 'react';
-import { Link, useStaticQuery, graphql } from 'gatsby';
-import BackgroundImage from 'gatsby-background-image';
+import { useStaticQuery, graphql } from 'gatsby';
 import PropTypes from 'prop-types';
 
 import Header from './Header';
@@ -15,11 +14,25 @@ import Footer from './Footer';
 
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
-    query SiteTitleQuery {
+    query {
       site {
         siteMetadata {
           title
           company
+        }
+      }
+
+      footer: sanityFooter {
+        description
+        socialMedia {
+          facebook
+          email
+        }
+        contactInfo {
+          address
+          addressURL
+          email
+          phoneNumber
         }
       }
     }
@@ -31,7 +44,10 @@ const Layout = ({ children }) => {
       <div className="container mb-6 ">
         <main>{children}</main>
       </div>
-      <Footer companyName={data.site.siteMetadata.company} />
+      <Footer
+        footerData={data.footer}
+        companyName={data.site.siteMetadata.company}
+      />
     </>
   );
 };

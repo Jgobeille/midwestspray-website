@@ -132,6 +132,15 @@ var plugins = [{
     "cacheDigest": "43ce7202292401f053d606de3e21a97d"
   }
 }, {
+  plugin: __webpack_require__(/*! ./node_modules/gatsby-source-sanity/gatsby-ssr */ "./node_modules/gatsby-source-sanity/gatsby-ssr.js"),
+  options: {
+    "plugins": [],
+    "projectId": "wgpo4u84",
+    "dataset": "production",
+    "token": "skF7E5OibzhKfEZ9R63X65hZ1GwWntv9ReCgMWOWdEmnJZqaMYYHdTd9b7EjjhiyPEx0eGEIQVVphrJi8",
+    "graphqlTag": "default"
+  }
+}, {
   plugin: __webpack_require__(/*! ./gatsby-ssr */ "./gatsby-ssr.js"),
   options: {
     "plugins": []
@@ -3251,6 +3260,51 @@ function useScrollRestoration(identifier) {
     }
   };
 }
+
+/***/ }),
+
+/***/ "./node_modules/gatsby-source-sanity/gatsby-ssr.js":
+/*!*********************************************************!*\
+  !*** ./node_modules/gatsby-source-sanity/gatsby-ssr.js ***!
+  \*********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+// Proxy to TypeScript-compiled output.
+// Note that unlike gatsby-node.js, we need to explicitly define the exported hooks
+// as they seem to be statically analyzed at build time.
+const ssr = __webpack_require__(/*! ./lib/gatsby-ssr */ "./node_modules/gatsby-source-sanity/lib/gatsby-ssr.js");
+
+exports.onRenderBody = ssr.onRenderBody;
+
+/***/ }),
+
+/***/ "./node_modules/gatsby-source-sanity/lib/gatsby-ssr.js":
+/*!*************************************************************!*\
+  !*** ./node_modules/gatsby-source-sanity/lib/gatsby-ssr.js ***!
+  \*************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.onRenderBody = void 0;
+
+const react_1 = __webpack_require__(/*! react */ "react");
+
+exports.onRenderBody = ({
+  setHeadComponents
+}) => {
+  setHeadComponents([react_1.createElement('link', {
+    rel: 'preconnect',
+    key: 'sanity-cdn-preconnect',
+    href: 'https://cdn.sanity.io'
+  })]);
+};
 
 /***/ }),
 
