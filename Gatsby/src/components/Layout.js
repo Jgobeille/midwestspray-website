@@ -22,7 +22,7 @@ const Layout = ({ children }) => {
         }
       }
 
-      footer: sanityFooter {
+      contactData: sanityFooter {
         description
         socialMedia {
           facebook
@@ -45,7 +45,7 @@ const Layout = ({ children }) => {
         <main>{children}</main>
       </div>
       <Footer
-        footerData={data.footer}
+        contactData={data.contactData}
         companyName={data.site.siteMetadata.company}
       />
     </>

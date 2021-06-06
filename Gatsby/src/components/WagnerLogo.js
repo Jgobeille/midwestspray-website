@@ -8,8 +8,8 @@ const WagnerLogo = () => {
       className="mx-2"
       src="../images/logo-wagner.png"
       alt="Wagner logo"
-      height="200"
-      width="500"
+      height={200}
+      width={500}
     />
   );
 };

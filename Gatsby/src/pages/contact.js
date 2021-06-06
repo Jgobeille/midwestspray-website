@@ -1,126 +1,131 @@
+import { graphql } from 'gatsby';
 import React from 'react';
-import { Link } from 'gatsby';
 
 import Layout from 'src/components/Layout';
 import SEO from 'src/components/SEO';
+import ContactForm from '../components/ContactForm';
 
-const ContactPage = () => (
-  <Layout>
-    <SEO title="Contact Us" />
-    <div className="py-12">
-      <div className="container py-6">
-        <section className="text-gray-700 body-font">
-          <div className="container px-5 mx-auto">
-            <div className="flex flex-col w-full mb-12 text-center">
-              <h1 className="py-4 text-center font-slim text-brown">
-                Contact Us
-              </h1>
-              <p className="mx-auto text-base leading-relaxed lg:w-2/3">
-                Whatever cardigan tote bag tumblr hexagon brooklyn asymmetrical
-                gentrify.
-              </p>
+export const data = graphql`
+  query {
+    contactData: sanityFooter {
+      description
+      socialMedia {
+        facebook
+        email
+      }
+      contactInfo {
+        address
+        addressURL
+        email
+        phoneNumber
+      }
+    }
+  }
+`;
+
+const ContactPage = ({ data }) => {
+  const { contactData } = data;
+  return (
+    <Layout>
+      <SEO title="Contact Us" />
+
+      <div className="py-12">
+        <div className="container py-6">
+          <h1 className="py-4 text-center text-primary font-slim text-brown">
+            Contact Us
+          </h1>
+          <div className="flex flex-col md:flex-row">
+            <div className="flex flex-col sm:mb-10 order-2 justify-center md:w-1/2">
+              <ContactForm
+                containerStyles={'py-8 bg-turquoise-blue-500 rounded-md'}
+                formContainerStyles={'container md:px-5 mx-auto '}
+              />
             </div>
-            <div className="mx-auto lg:w-1/2 md:w-2/3">
-              <div className="flex flex-wrap -m-2">
-                <div className="w-1/2 p-2">
-                  <input
-                    className="w-full px-4 py-2 text-base bg-gray-100 border border-gray-400 rounded focus:outline-none focus:border-secondary"
-                    placeholder="Name"
-                    type="text"
-                  ></input>
-                </div>
-                <div className="w-1/2 p-2">
-                  <input
-                    className="w-full px-4 py-2 text-base bg-gray-100 border border-gray-400 rounded focus:outline-none focus:border-secondary"
-                    placeholder="Email"
-                    type="email"
-                  ></input>
-                </div>
-                <div className="w-full p-2">
-                  <textarea
-                    className="block w-full h-48 px-4 py-2 text-base bg-gray-100 border border-gray-400 rounded resize-none focus:outline-none focus:border-secondary"
-                    placeholder="Message"
-                  ></textarea>
-                </div>
-                <div className="w-full p-2">
-                  <button className="flex px-8 py-2 mx-auto text-lg text-white border-0 rounded bg-orange hover:bg-orange-dark focus:outline-none">
-                    Button
-                  </button>
-                </div>
-                <div className="w-full p-2 pt-8 mt-8 text-center border-t border-gray-200">
-                  <a className="text-secondary">example@email.com</a>
-                  <p className="my-5 leading-normal">
-                    49 Smith St.
-                    <br />
-                    Saint Cloud, MN 56301
+            <div className="flex flex-col w-full order-1 mb-8 md:mb-0 mr-2 sm:order-1  md:justify-start md:w-1/2">
+              <div className="flex flex-col">
+                <div>
+                  <p className="text-black text-md">
+                    Morbo will now introduce tonight's candidates… PUNY HUMAN
+                    NUMBER ONE, PUNY HUMAN NUMBER TWO, and Morbo's good friend,
+                    Richard Nixon. We'll need to have a look inside you with
+                    this camera. Bender, I didn't know you liked cooking. That's
+                    so cute.
                   </p>
-                  <span className="inline-flex">
-                    <a className="text-gray-500">
-                      <svg
-                        fill="currentColor"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        stroke-width="2"
-                        className="w-5 h-5"
-                        viewBox="0 0 24 24"
-                      >
-                        <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"></path>
-                      </svg>
-                    </a>
-                    <a className="ml-4 text-gray-500">
-                      <svg
-                        fill="currentColor"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        stroke-width="2"
-                        className="w-5 h-5"
-                        viewBox="0 0 24 24"
-                      >
-                        <path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"></path>
-                      </svg>
-                    </a>
-                    <a className="ml-4 text-gray-500">
-                      <svg
-                        fill="none"
-                        stroke="currentColor"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        stroke-width="2"
-                        className="w-5 h-5"
-                        viewBox="0 0 24 24"
-                      >
-                        <rect
-                          width="20"
-                          height="20"
-                          x="2"
-                          y="2"
-                          rx="5"
-                          ry="5"
-                        ></rect>
-                        <path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37zm1.5-4.87h.01"></path>
-                      </svg>
-                    </a>
-                    <a className="ml-4 text-gray-500">
-                      <svg
-                        fill="currentColor"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        stroke-width="2"
-                        className="w-5 h-5"
-                        viewBox="0 0 24 24"
-                      >
-                        <path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z"></path>
-                      </svg>
-                    </a>
-                  </span>
                 </div>
+                <div className=" flex flex-col mb-6">
+                  {contactData.contactInfo.address ? (
+                    <a
+                      className="no-underline mb-1 font-secondary text-black text-md"
+                      href={contactData.contactInfo.addressURL}
+                    >
+                      {' '}
+                      {contactData.contactInfo.address}
+                    </a>
+                  ) : (
+                    ''
+                  )}
+
+                  {contactData.contactInfo.phoneNumber ? (
+                    <a
+                      className="no-underline mb-1 font-secondary text-black text-md"
+                      href={`tel:+${contactData.contactInfo.phoneNumber}`}
+                    >
+                      {contactData.contactInfo.phoneNumber}
+                    </a>
+                  ) : (
+                    ''
+                  )}
+                  {contactData.contactInfo.email ? (
+                    <a
+                      className="no-underline mb-1 font-secondary text-black text-md"
+                      href={`mailto:${contactData.contactInfo.email}`}
+                    >
+                      {contactData.contactInfo.email}
+                    </a>
+                  ) : (
+                    ''
+                  )}
+                </div>
+              </div>
+              <div className="flex flex-row">
+                {contactData.socialMedia.facebook ? (
+                  <a href={contactData.socialMedia.facebook}>
+                    <svg
+                      className="w-6 h-6 mr-4 fill-current text-black hover:text-turquoise-blue-500"
+                      viewBox="0 0 512 512"
+                    >
+                      <path d="M455.27,32H56.73A24.74,24.74,0,0,0,32,56.73V455.27A24.74,24.74,0,0,0,56.73,480H256V304H202.45V240H256V189c0-57.86,40.13-89.36,91.82-89.36,24.73,0,51.33,1.86,57.51,2.68v60.43H364.15c-28.12,0-33.48,13.3-33.48,32.9V240h67l-8.75,64H330.67V480h124.6A24.74,24.74,0,0,0,480,455.27V56.73A24.74,24.74,0,0,0,455.27,32Z" />
+                    </svg>
+                  </a>
+                ) : (
+                  ''
+                )}
+                {contactData.socialMedia.email ? (
+                  <a href={`mailto:${contactData.socialMedia.email}`}>
+                    <svg
+                      fill="none"
+                      className="w-6 h-6 mr-4 text-black hover:text-turquoise-blue-500"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth="2"
+                        d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+                      />
+                    </svg>
+                  </a>
+                ) : (
+                  ''
+                )}
               </div>
             </div>
           </div>
-        </section>
+        </div>
       </div>
-    </div>
-  </Layout>
-);
+    </Layout>
+  );
+};
 
 export default ContactPage;

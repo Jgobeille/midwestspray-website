@@ -8,8 +8,8 @@ const GracoLogo = () => {
       className="mx-2"
       src="../images/graco-logo.jpeg"
       alt="Graco logo"
-      height="200"
-      width="200"
+      height={200}
+      width={200}
     />
   );
 };

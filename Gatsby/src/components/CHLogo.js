@@ -8,8 +8,8 @@ const CHLogo = () => {
       className="mx-2"
       src="../images/Cambell-Hausfeld-Logo.jpeg"
       alt="Campbell Hausfeld logo"
-      height="200"
-      width="200"
+      height={200}
+      width={200}
     />
   );
 };

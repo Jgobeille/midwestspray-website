@@ -1,6 +1,6 @@
 export default {
   name: 'homePageRepairSection',
-  title: 'Home page Repair Section',
+  title: 'Repair Section',
   type: 'document',
   fields: [
     {

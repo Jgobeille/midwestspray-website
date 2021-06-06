@@ -21,8 +21,8 @@ const SpraymanImage = () => {
       alt="Sprayman superhero"
       placeholder="blurred"
       layout="constrained"
-      width="500"
-      height="800"
+      width={500}
+      height={800}
     />
   );
 };

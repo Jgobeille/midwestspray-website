@@ -8,8 +8,8 @@ const TitanLogo = () => {
       className="mx-2"
       src="../images/titan-tool-logo.jpeg"
       alt="Titan logo"
-      height="200"
-      width="250"
+      height={200}
+      width={250}
     />
   );
 };

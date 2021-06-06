@@ -1,16 +1,16 @@
 import PropTypes from 'prop-types';
-import { graphql, Link } from 'gatsby';
+import { Link } from 'gatsby';
 import React from 'react';
 
-const Footer = ({ companyName, footerData }) => {
-  const { contactInfo, socialMedia } = footerData;
+const Footer = ({ companyName, contactData }) => {
+  const { contactInfo, socialMedia } = contactData;
   return (
     <footer className="w-full sm:px-4 py-6 shadow-sm bg-celadon-blue-default">
-      <div className="container  mb-14 pl-6 pr-6 sm:pl-20 sm:pr-20 sm:grid sm:grid-cols-4 sm:gap-x-6 ">
+      <div className="container  mb-10 pl-6 pr-6 sm:pl-20 sm:pr-20 sm:grid sm:grid-cols-4 sm:gap-x-6 ">
         <div className="flex flex-col mb-10">
           <h3 className="font-main mb-4 text-white text-lg">Midwest Spray</h3>
           <p className="font-secondary mb-4 text-white text-xs">
-            {footerData.description}
+            {contactData.description}
           </p>
           <div className="flex flex-row">
             {socialMedia.facebook ? (
@@ -34,9 +34,9 @@ const Footer = ({ companyName, footerData }) => {
                   stroke="currentColor"
                 >
                   <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
                     d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
                   />
                 </svg>
@@ -132,7 +132,7 @@ const Footer = ({ companyName, footerData }) => {
           </div>
         </div>
       </div>
-      <div className="col-span-5 flex flex-col mb-10 justify-center ">
+      <div className="col-span-5 flex flex-col  justify-center ">
         <span className="mr-6 text-sm text-white justify-center text-center sm:mr-0 sm:text-base">
           © {companyName}, {new Date().getFullYear()}.{' '}
         </span>

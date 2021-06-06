@@ -1,7 +1,5 @@
 import React from 'react';
 
-import PaintSprayer from 'src/images/paint-sprayer-transparent.png';
-
 import { Link } from 'gatsby';
 
 import { GatsbyImage, getImage } from 'gatsby-plugin-image';

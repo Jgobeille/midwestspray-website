@@ -8,8 +8,8 @@ const GeneralPumpLogo = () => {
       className="mx-2"
       src="../images/general-pump-logo.jpeg"
       alt="General Pump logo"
-      height="200"
-      width="200"
+      height={200}
+      width={200}
     />
   );
 };

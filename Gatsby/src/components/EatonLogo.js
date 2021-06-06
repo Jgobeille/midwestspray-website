@@ -8,8 +8,8 @@ const EatonLogo = () => {
       className="mx-2"
       src="../images/eaton-air-compressor-2.png"
       alt="Eaton logo"
-      height="200"
-      width="300"
+      height={200}
+      width={300}
     />
   );
 };

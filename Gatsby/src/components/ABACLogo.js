@@ -8,8 +8,8 @@ const ABACLogo = () => {
       className="mx-2"
       src="../images/ABAC-logo.gif"
       alt="ABAC logo"
-      height="200"
-      width="700"
+      height={200}
+      width={700}
     />
   );
 };

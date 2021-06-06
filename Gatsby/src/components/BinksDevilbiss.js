@@ -8,8 +8,8 @@ const BinksDevilbissLogo = () => {
       className="mx-2"
       src="../images/binks-devilbiss-logo.jpeg"
       alt="Titan logo"
-      height="200"
-      width="200"
+      height={200}
+      width={200}
     />
   );
 };

@@ -15,6 +15,7 @@ import GeneralPumpLogo from '../components/GeneralPumpLogo';
 import GracoLogo from '../components/GracoLogo';
 import WagnerLogo from '../components/WagnerLogo';
 import WhatWeRepair from '../components/WhatWeRepair';
+import ContactForm from '../components/ContactForm';
 
 export const query = graphql`
   query {
@@ -27,6 +28,7 @@ export const query = graphql`
     }
     repairSection: allSanityHomePageRepairSection {
       nodes {
+        id
         title
         button
         buttonUrl
@@ -52,7 +54,7 @@ const IndexPage = ({ data }) => {
 
       <div className="sm:max-w-6xl pl-6 sm:pl-12 pr-6 sm:pr-12 pb-12 pt-20 mt-4 sm:m-auto ">
         <div className="flex flex-col sm:pb-10 md:pb-32 border-b-2 md:flex-row">
-          <div className="flex flex-col order-2 sm:mb-10 order-2 justify-center max-w-md md:w-1/2">
+          <div className="flex flex-col sm:mb-10 order-2 justify-center max-w-md md:w-1/2">
             <div className="text-2xl font-main font-black md:text-5xl text-primary">
               <span className="">{topSection.topMessage}</span>
             </div>
@@ -84,7 +86,7 @@ const IndexPage = ({ data }) => {
         {/* <div className="relative left-50 right-50 -ml-50 -mr-50 pt-2 pb-6 mx-auto border-b-2"> */}
         <div className="pt-2 pb-6 mx-auto overflow-hidden border-b-2">
           <div className="flex justify-center w-3800 pl-6 my-4 overflow-hidden">
-            <div class=" flex flex-row animate-scroll slide-track ">
+            <div className=" flex flex-row animate-scroll slide-track ">
               <ABACLogo />
               <BelaireLogo />
               <EatonLogo />
@@ -107,11 +109,12 @@ const IndexPage = ({ data }) => {
           </h1>
           {repairSection.nodes.map(
             (
-              { addButton, button, buttonUrl, description, image, title },
+              { id, addButton, button, buttonUrl, description, image, title },
               i
             ) => {
               return i % 2 == 0 ? (
                 <WhatWeRepair
+                  key={id}
                   addButton={addButton}
                   buttonText={button}
                   buttonUrl={buttonUrl}
@@ -125,6 +128,7 @@ const IndexPage = ({ data }) => {
                 />
               ) : (
                 <WhatWeRepair
+                  key={id}
                   addButton={addButton}
                   buttonText={button}
                   buttonUrl={buttonUrl}
@@ -140,80 +144,17 @@ const IndexPage = ({ data }) => {
             }
           )}
         </div>
-        {/* What People Are Saying Section */}
+        {/* Contact Section */}
         <h1 className="py-4 text-center text-primary font-slim text-brown">
           Have a Question?
         </h1>
-        <div className="px-8 py-8 sm:py-16 bg-turquoise-blue-500 rounded-md">
-          <div className="container md:px-10 lg:px-16 mx-auto ">
-            <form className="sm:grid sm:gap-2 sm:grid-cols-2" action="POST">
-              <div>
-                <label htmlFor="first name">First Name</label>
-                <br />
-                <input
-                  type="text"
-                  placeholder="Hugh"
-                  className="rounded-sm form-input w-full border-0"
-                />
-              </div>
-              <div>
-                <label htmlFor="last name">Last Name</label>
-                <br />
-                <input
-                  type="text"
-                  placeholder="Jazz"
-                  className="rounded-sm form-input w-full border-0"
-                />
-              </div>
-              <div>
-                <label htmlFor="email">Email </label>
-                <br />
-                <input
-                  type="email"
-                  placeholder="hughJazz@gmail.com"
-                  className="rounded-sm form-input w-full border-0"
-                />
-              </div>
-              <div>
-                <label htmlFor="company name">Company Name</label>
-                <br />
-                <input
-                  type="text"
-                  placeholder="Hugh's Jazz Company"
-                  className="rounded-sm form-input w-full border-0"
-                />
-              </div>
-              <div className="col-span-2">
-                <label htmlFor="how can we help?">How can we help?</label>
-                <br />
-                <select className="rounded-sm form-input w-full border-0 ">
-                  <option value="Need a quote">I need a quote</option>
-                  <option value="General Inquiry">
-                    I have a general inquiry
-                  </option>
-                  <option value="Service call">Service call</option>
-                </select>
-              </div>
-              <div className="col-span-2">
-                <label htmlFor="message">Message</label>
-                <br />
-                <textarea
-                  name="message"
-                  rows="5"
-                  className="rounded-sm w-full h-full border-0"
-                ></textarea>
-              </div>
-              <div className="mt-10">
-                <Link
-                  to="/contact"
-                  className="px-4 mt-8 font-secondary py-2 text-black bg-white rounded-sm shadow-sm  sm:top-4  hover:no-underline"
-                >
-                  Submit
-                </Link>
-              </div>
-            </form>
-          </div>
-        </div>
+        <ContactForm
+          containerStyles={
+            'px-8 py-8 sm:py-16 bg-turquoise-blue-500 rounded-md'
+          }
+          formStyles={'sm:grid sm:gap-2 sm:grid-cols-2'}
+          formContainerStyles={'container md:px-10 lg:px-16 mx-auto '}
+        />
       </div>
     </Layout>
   );
