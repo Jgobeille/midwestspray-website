@@ -1,8 +1,9 @@
 import { graphql } from 'gatsby';
 import React from 'react';
+import BlockContent from '@sanity/block-content-to-react';
 
-import Layout from 'src/components/Layout';
-import SEO from 'src/components/SEO';
+import Layout from '../components/Layout';
+import SEO from '../components/SEO';
 import ContactForm from '../components/ContactForm';
 
 export const data = graphql`
@@ -20,11 +21,15 @@ export const data = graphql`
         phoneNumber
       }
     }
+    description: sanityContactPage {
+      _rawDescription
+    }
   }
 `;
 
 const ContactPage = ({ data }) => {
-  const { contactData } = data;
+  const { contactData, description } = data;
+
   return (
     <Layout>
       <SEO title="Contact Us" />
@@ -38,19 +43,25 @@ const ContactPage = ({ data }) => {
             <div className="flex flex-col sm:mb-10 order-2 justify-center md:w-1/2">
               <ContactForm
                 containerStyles={'py-8 bg-turquoise-blue-500 rounded-md'}
-                formContainerStyles={'container md:px-5 mx-auto '}
+                formContainerStyles={'container px-5 mx-auto '}
               />
             </div>
-            <div className="flex flex-col w-full order-1 mb-8 md:mb-0 mr-2 sm:order-1  md:justify-start md:w-1/2">
+            <div className="flex flex-col w-full order-1 px-4 md:px-0 mb-8 md:mb-0 sm:mr-2 sm:order-1  md:justify-start md:w-1/2">
               <div className="flex flex-col">
                 <div>
-                  <p className="text-black text-md">
+                  <BlockContent
+                    className="prose prose-sm prose-black mb-6"
+                    blocks={description._rawDescription}
+                    projectId="wgpo4u84"
+                    dataset="production"
+                  />
+                  {/* <p className="text-black md:text-md">
                     Morbo will now introduce tonight's candidates… PUNY HUMAN
                     NUMBER ONE, PUNY HUMAN NUMBER TWO, and Morbo's good friend,
                     Richard Nixon. We'll need to have a look inside you with
                     this camera. Bender, I didn't know you liked cooking. That's
                     so cute.
-                  </p>
+                  </p> */}
                 </div>
                 <div className=" flex flex-col mb-6">
                   {contactData.contactInfo.address ? (

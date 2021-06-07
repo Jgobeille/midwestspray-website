@@ -29,15 +29,11 @@ function Header({ siteTitle }) {
         >
           {[
             {
-              route: `/our-story`,
+              route: `/`,
               title: `Home`,
             },
             {
-              route: `/our-team`,
-              title: `Equipment`,
-            },
-            {
-              route: `/our-farm`,
+              route: `/about`,
               title: `About`,
             },
             {
@@ -45,8 +41,8 @@ function Header({ siteTitle }) {
               title: `Dougs Blog`,
             },
             {
-              route: `/our-products`,
-              title: `Services`,
+              route: `/our-team`,
+              title: `Equipment`,
             },
           ].map((link) => (
             <Link
@@ -95,28 +91,20 @@ function Header({ siteTitle }) {
                 >
                   {[
                     {
-                      route: `/our-story`,
-                      title: `Our Story`,
+                      route: `/`,
+                      title: `Home`,
                     },
                     {
-                      route: `/our-team`,
-                      title: `Our Team`,
-                    },
-                    {
-                      route: `/our-farm`,
-                      title: `Our Farm`,
+                      route: `/about`,
+                      title: `About`,
                     },
                     {
                       route: `/our-blog`,
-                      title: `Our Blog`,
+                      title: `Dougs Blog`,
                     },
                     {
-                      route: `/our-products`,
-                      title: `Our Products`,
-                    },
-                    {
-                      route: `/contact`,
-                      title: `Contact Us`,
+                      route: `/our-team`,
+                      title: `Equipment`,
                     },
                   ].map((link) => (
                     <Link

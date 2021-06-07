@@ -1,9 +1,9 @@
 import React from 'react';
 import { graphql, Link } from 'gatsby';
 
-import Layout from 'src/components/Layout';
+import Layout from '../components/Layout';
 
-import SEO from 'src/components/SEO';
+import SEO from '../components/SEO';
 import SpraymanImage from '../components/SpraymanImage';
 import TitanLogo from '../components/TitanLogo';
 import ABACLogo from '../components/ABACLogo';
@@ -125,6 +125,7 @@ const IndexPage = ({ data }) => {
                     'flex flex-col order-1 mb-10 sm:mr-16 justify-center max-w-md md:w-1/2'
                   }
                   imageClasses={'flex flex-col order-2  max-w-md md:w-1/2'}
+                  slideDirection={'slide-left'}
                 />
               ) : (
                 <WhatWeRepair
@@ -139,6 +140,7 @@ const IndexPage = ({ data }) => {
                     'flex flex-col order-2 mb-10 sm:ml-16 justify-center max-w-md md:w-1/2'
                   }
                   imageClasses={'flex flex-col order-1  max-w-md md:w-1/2'}
+                  slideDirection={'slide-right'}
                 />
               );
             }

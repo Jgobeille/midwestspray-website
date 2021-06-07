@@ -13,6 +13,7 @@ const WhatWeRepair = ({
   image,
   textClasses,
   imageClasses,
+  slideDirection,
 }) => {
   return (
     <div className="flex flex-col pb-10 md:flex-row">
@@ -36,7 +37,7 @@ const WhatWeRepair = ({
       </div>
 
       <div
-        data-sal="slide-left"
+        data-sal={slideDirection}
         data-sal-duration="500"
         data-sal-delay="300"
         data-sal-easing="ease"

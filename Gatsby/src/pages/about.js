@@ -1,19 +1,59 @@
 import React from 'react';
 import { Link } from 'gatsby';
 
-import Layout from 'src/components/Layout';
-import FarmImage from 'src/images/simplicity-farms.jpg';
-import SEO from 'src/components/SEO';
+import Layout from '../components/Layout';
+import FarmImage from '../images/simplicity-farms.jpg';
+import SEO from '../components/SEO';
+import SpraymanImageV2 from '../components/SpraymanImageV2';
+import { StaticImage } from 'gatsby-plugin-image';
 
 const OurStoryPage = () => (
   <Layout>
     <SEO title="Our Story" />
+    <div className="flex flex-col sm:pb-10 sm:py-8 md:py-16 border-b-2 md:flex-row">
+      <div className="flex flex-col sm:mb-10 justify-center max-w-md md:w-1/2">
+        <div className="text-2xl font-main font-black md:text-5xl text-primary">
+          <span className="">Meet the original Sprayman</span>
+        </div>
+        <div className="mt-4 font-secondary text-xl">
+          Spare me your space age technobabble, Attila the Hun! I love you,
+          buddy! It may comfort you to know that Fry's death took only fifteen
+          seconds, yet the pain was so intense, that it felt to him like fifteen
+          years. And it goes without saying, it caused him to empty his bowels.
+        </div>
+      </div>
+      {/* Hero Section */}
+      <div className="flex flex-col w-full -mt-5 md:justify-center md:items-center md:w-1/2">
+        <StaticImage
+          className="mx-2"
+          src="../images/15317845_10155626711903521_4624180674135475803_n.jpg"
+          alt="dad-car"
+        />
+      </div>
+    </div>
+    <div className="flex flex-col sm:py-8 md:py-16 sm:pb-10 md:pb-16 border-b-2 md:flex-row">
+      {/* Hero Section */}
+      <div className="flex flex-col w-full -mt-5 md:justify-center md:items-center md:w-1/2">
+        <SpraymanImageV2 />
+      </div>
+      <div className="flex flex-col sm:mb-10 justify-center max-w-md md:w-1/2">
+        <div className="text-2xl font-main font-black md:text-5xl text-primary">
+          <span className="">Meet the original Sprayman</span>
+        </div>
+        <div className="mt-4 font-secondary text-xl">
+          Spare me your space age technobabble, Attila the Hun! I love you,
+          buddy! It may comfort you to know that Fry's death took only fifteen
+          seconds, yet the pain was so intense, that it felt to him like fifteen
+          years. And it goes without saying, it caused him to empty his bowels.
+        </div>
+      </div>
+    </div>
     <div className="flex flex-col mt-16 -mx-8 justify-left">
       <div className="story-section">
         <div className="flex items-start flex-initial w-8 px-8 border-r-2 border-gray-300 border-dashed"></div>
 
         <div className="flex-col items-start flex-1 max-w-4xl px-8 text-xl font-semibold leading-snug tracking-tight text-justify md:text-xl">
-          <h1 className="text-4xl font-bold leading-none text-brown md:text-5xl lg:text-6xl ">
+          <h1 className="text-4xl font-bold leading-none text-primary md:text-5xl lg:text-6xl ">
             An Idea Is Born
           </h1>
 
@@ -25,53 +65,64 @@ const OurStoryPage = () => (
           </time>
 
           <p className="mt-8 mb-12">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Arcu odio ut sem nulla pharetra. Rhoncus aenean vel elit scelerisque mauris pellentesque pulvinar.
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua. Arcu
+            odio ut sem nulla pharetra. Rhoncus aenean vel elit scelerisque
+            mauris pellentesque pulvinar.
           </p>
         </div>
       </div>
       <div class="flex flex-wrap lg:justify-left pl-4">
-        <Link class="hover:no-underline w-1/4 sm:w-1/2 lg:w-1/4 mb-6"
+        <Link
+          class="hover:no-underline w-1/4 sm:w-1/2 lg:w-1/4 mb-6"
           title="Burris Custom Turrets"
           to="/brands/burris/scopes"
         >
           <div class="p-4 text-center bg-white hover:bg-gray-100 hover:shadow-lg transition border rounded m-2 h-3/4 pb-10 sm:pb-auto sm:h-full flex flex-col justify-between">
-            <img class="rounded sm:h-32 w-3/4 sm:w-full mx-auto"
+            <img
+              class="rounded sm:h-32 w-3/4 sm:w-full mx-auto"
               alt="Burris Custom Turrets"
               src={FarmImage}
             ></img>
             <h2 class="text-sm sm:text-lg mb-0 text-gray-900">Burris</h2>
           </div>
         </Link>
-        <Link class="hover:no-underline w-1/4 sm:w-1/2 lg:w-1/4 mb-6"
+        <Link
+          class="hover:no-underline w-1/4 sm:w-1/2 lg:w-1/4 mb-6"
           title="Bushnell Custom Turrets"
           to="/brands/bushnell/scopes"
         >
           <div class="p-4 text-center bg-white hover:bg-gray-100 hover:shadow-lg transition border rounded m-2 h-3/4 pb-10 sm:pb-auto sm:h-full flex flex-col justify-between">
-            <img class="rounded sm:h-32 w-3/4 sm:w-full mx-auto"
+            <img
+              class="rounded sm:h-32 w-3/4 sm:w-full mx-auto"
               alt="Bushnell Custom Turrets"
               src={FarmImage}
             ></img>
             <h2 class="text-sm sm:text-lg mb-0 text-gray-900">Bushnell</h2>
           </div>
         </Link>
-        <Link class="hover:no-underline w-1/4 sm:w-1/2 lg:w-1/4 mb-6"
+        <Link
+          class="hover:no-underline w-1/4 sm:w-1/2 lg:w-1/4 mb-6"
           title="Kahles Custom Turrets"
           to="/brands/kahles/scopes"
         >
           <div class="p-4 text-center bg-white hover:bg-gray-100 hover:shadow-lg transition border rounded m-2 h-3/4 pb-10 sm:pb-auto sm:h-full flex flex-col justify-between">
-            <img class="rounded sm:h-32 w-3/4 sm:w-full mx-auto"
+            <img
+              class="rounded sm:h-32 w-3/4 sm:w-full mx-auto"
               alt="Kahles Custom Turrets"
               src={FarmImage}
             ></img>
             <h2 class="text-sm sm:text-lg mb-0 text-gray-900">Kahles</h2>
           </div>
         </Link>
-        <Link class="hover:no-underline w-1/4 sm:w-1/2 lg:w-1/4 mb-6"
+        <Link
+          class="hover:no-underline w-1/4 sm:w-1/2 lg:w-1/4 mb-6"
           title="Leupold Custom Turrets"
           to="/brands/leupold/scopes"
         >
           <div class="p-4 text-center bg-white hover:bg-gray-100 hover:shadow-lg transition border rounded m-2 h-3/4 pb-10 sm:pb-auto sm:h-full flex flex-col justify-between">
-            <img class="rounded sm:h-32 w-3/4 sm:w-full mx-auto"
+            <img
+              class="rounded sm:h-32 w-3/4 sm:w-full mx-auto"
               alt="Leupold Custom Turrets"
               src={FarmImage}
             ></img>
@@ -83,7 +134,7 @@ const OurStoryPage = () => (
         <div className="flex items-start flex-initial w-8 px-8 border-r-2 border-gray-300 border-dashed"></div>
 
         <div className="flex-col items-start flex-1 max-w-4xl px-8 mt-16 text-xl font-semibold leading-snug tracking-tight text-justify">
-          <h1 className="text-4xl font-bold leading-none text-brown md:text-5xl lg:text-6xl ">
+          <h1 className="text-4xl font-bold leading-none text-primary md:text-5xl lg:text-6xl ">
             A Company Is Born
           </h1>
 
@@ -95,29 +146,36 @@ const OurStoryPage = () => (
           </time>
 
           <p className="mt-8 mb-12">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Arcu odio ut sem nulla pharetra. Rhoncus aenean vel elit scelerisque mauris pellentesque pulvinar.
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua. Arcu
+            odio ut sem nulla pharetra. Rhoncus aenean vel elit scelerisque
+            mauris pellentesque pulvinar.
           </p>
         </div>
       </div>
       <div class="flex flex-wrap lg:justify-left">
-        <Link class="hover:no-underline w-1/4 sm:w-1/2 lg:w-1/4 mb-6"
+        <Link
+          class="hover:no-underline w-1/4 sm:w-1/2 lg:w-1/4 mb-6"
           title="Burris Custom Turrets"
           to="/brands/burris/scopes"
         >
           <div class="p-4 text-center bg-white hover:bg-gray-100 hover:shadow-lg transition border rounded m-2 h-3/4 pb-10 sm:pb-auto sm:h-full flex flex-col justify-between">
-            <img class="rounded sm:h-32 w-3/4 sm:w-full mx-auto"
+            <img
+              class="rounded sm:h-32 w-3/4 sm:w-full mx-auto"
               alt="Burris Custom Turrets"
               src={FarmImage}
             ></img>
             <h2 class="text-sm sm:text-lg mb-0 text-gray-900">Burris</h2>
           </div>
         </Link>
-        <Link class="hover:no-underline w-1/4 sm:w-1/2 lg:w-1/4 mb-6"
+        <Link
+          class="hover:no-underline w-1/4 sm:w-1/2 lg:w-1/4 mb-6"
           title="Bushnell Custom Turrets"
           to="/brands/bushnell/scopes"
         >
           <div class="p-4 text-center bg-white hover:bg-gray-100 hover:shadow-lg transition border rounded m-2 h-3/4 pb-10 sm:pb-auto sm:h-full flex flex-col justify-between">
-            <img class="rounded sm:h-32 w-3/4 sm:w-full mx-auto"
+            <img
+              class="rounded sm:h-32 w-3/4 sm:w-full mx-auto"
               alt="Bushnell Custom Turrets"
               src={FarmImage}
             ></img>
@@ -129,7 +187,7 @@ const OurStoryPage = () => (
         <div className="flex items-start flex-initial w-8 px-8 border-r-2 border-gray-300 border-dashed"></div>
 
         <div className="flex-col items-start flex-1 max-w-4xl px-8 mt-16 text-xl font-semibold leading-snug tracking-tight text-justify">
-          <h1 className="text-4xl font-bold leading-none text-brown md:text-5xl lg:text-6xl ">
+          <h1 className="text-4xl font-bold leading-none text-primary md:text-5xl lg:text-6xl ">
             A Farm Comes Into Life
           </h1>
 
@@ -141,7 +199,10 @@ const OurStoryPage = () => (
           </time>
 
           <p className="mt-8 mb-12">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Arcu odio ut sem nulla pharetra. Rhoncus aenean vel elit scelerisque mauris pellentesque pulvinar.
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua. Arcu
+            odio ut sem nulla pharetra. Rhoncus aenean vel elit scelerisque
+            mauris pellentesque pulvinar.
           </p>
         </div>
       </div>
@@ -149,7 +210,7 @@ const OurStoryPage = () => (
         <div className="flex items-start flex-initial w-8 px-8 border-r-2 border-gray-300 border-dashed"></div>
 
         <div className="flex-col items-start flex-1 max-w-4xl px-8 mt-16 text-xl font-semibold leading-snug tracking-tight text-justify">
-          <h1 className="text-4xl font-bold leading-none text-brown md:text-5xl lg:text-6xl ">
+          <h1 className="text-4xl font-bold leading-none text-primary md:text-5xl lg:text-6xl ">
             A Farm Is Funded
           </h1>
 
@@ -161,7 +222,10 @@ const OurStoryPage = () => (
           </time>
 
           <p className="mt-8 mb-12">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Arcu odio ut sem nulla pharetra. Rhoncus aenean vel elit scelerisque mauris pellentesque pulvinar.
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua. Arcu
+            odio ut sem nulla pharetra. Rhoncus aenean vel elit scelerisque
+            mauris pellentesque pulvinar.
           </p>
         </div>
       </div>
@@ -169,7 +233,7 @@ const OurStoryPage = () => (
         <div className="flex items-start flex-initial w-8 px-8 border-r-2 border-gray-300 border-dashed"></div>
 
         <div className="flex-col items-start flex-1 max-w-4xl px-8 mt-16 text-xl font-semibold leading-snug tracking-tight text-justify">
-          <h1 className="text-4xl font-bold leading-none text-brown md:text-5xl lg:text-6xl ">
+          <h1 className="text-4xl font-bold leading-none text-primary md:text-5xl lg:text-6xl ">
             Growth
           </h1>
 
@@ -181,7 +245,10 @@ const OurStoryPage = () => (
           </time>
 
           <p className="mt-8 mb-12">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Arcu odio ut sem nulla pharetra. Rhoncus aenean vel elit scelerisque mauris pellentesque pulvinar.
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua. Arcu
+            odio ut sem nulla pharetra. Rhoncus aenean vel elit scelerisque
+            mauris pellentesque pulvinar.
           </p>
         </div>
       </div>

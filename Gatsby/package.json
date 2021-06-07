@@ -4,7 +4,9 @@
   "version": "0.1.5",
   "author": "Tapha @ PlanFlow.dev <tapha@planflow.com>",
   "dependencies": {
+    "@sanity/block-content-to-react": "^3.0.0",
     "@tailwindcss/forms": "^0.3.2",
+    "@tailwindcss/typography": "^0.4.1",
     "dotenv": "^8.6.0",
     "gatsby": "^2.32.13",
     "gatsby-background-image": "^1.1.1",
@@ -57,7 +59,7 @@
   "license": "MIT",
   "scripts": {
     "build": "gatsby build",
-    "develop": "gatsby develop -H 0.0.0.0",
+    "develop": "gatsby develop",
     "lint": "eslint --fix \"**/*.{js,jsx,ts,tsx}\"",
     "format": "prettier --write \"**/*.{css,sass,scss,html,json,md}\"",
     "start": "npm run develop",

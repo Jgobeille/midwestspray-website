@@ -45,6 +45,16 @@ module.exports = {
       '100': '100%',
     },
     extend: {
+      typography: {
+        DEFAULT: {
+          css: {
+            ul: {
+              listStyle: 'initial',
+              padding: 'revert',
+            },
+          },
+        },
+      },
       keyframes: {
         roll: {
           '0%, 100%': { transform: 'translateX(0) rotate(0deg)' },
@@ -230,5 +240,6 @@ module.exports = {
     require('tailwindcss-responsive-embed'),
     require('tailwindcss-aspect-ratio'),
     require('@tailwindcss/forms'),
+    require('@tailwindcss/typography'),
   ],
 };
