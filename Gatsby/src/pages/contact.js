@@ -44,6 +44,10 @@ const ContactPage = ({ data }) => {
               <ContactForm
                 containerStyles={'py-8 bg-turquoise-blue-500 rounded-md'}
                 formContainerStyles={'container px-5 mx-auto '}
+                animation={''}
+                duration={''}
+                delay={''}
+                easing={''}
               />
             </div>
             <div className="flex flex-col w-full order-1 px-4 md:px-0 mb-8 md:mb-0 sm:mr-2 sm:order-1  md:justify-start md:w-1/2">

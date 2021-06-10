@@ -55,6 +55,9 @@ module.exports = {
           },
         },
       },
+      gridTemplateColumns: {
+        masonry: 'repeat(auto-fit, minmax(200px, 1fr))',
+      },
       keyframes: {
         roll: {
           '0%, 100%': { transform: 'translateX(0) rotate(0deg)' },

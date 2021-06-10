@@ -1,8 +1,8 @@
 import React from 'react';
 import { Link } from 'gatsby';
-import LandFarmImage from 'src/images/land-at-sunset.jpg';
-import Layout from 'src/components/Layout';
-import SEO from 'src/components/SEO';
+import LandFarmImage from '../images/land-at-sunset.jpg';
+import Layout from '../components/Layout';
+import SEO from '../components/SEO';
 
 const OurBlogPage = () => (
   <Layout>
@@ -10,23 +10,23 @@ const OurBlogPage = () => (
 
     <div className="text-gray-700 body-font">
       <div className="container px-5 py-24 mx-auto">
-      <div className="flex flex-col w-full mb-12 text-center">
-          <h1 className="text-center font-slim text-brown">Our Blog</h1>
-              <p className="mx-auto text-base leading-relaxed lg:w-2/3">
-                Whatever cardigan tote bag tumblr hexagon brooklyn asymmetrical
-                gentrify.
-              </p>
-            </div>
+        <div className="flex flex-col w-full mb-12 text-center">
+          <h1 className="text-center text-primary ">Doug's Blog</h1>
+          <p className="mx-auto text-base leading-relaxed lg:w-2/3">
+            Whatever cardigan tote bag tumblr hexagon brooklyn asymmetrical
+            gentrify.
+          </p>
+        </div>
         <div className="flex flex-wrap -m-4">
           <div className="p-4 md:w-1/3">
-            <div className="h-full overflow-hidden border-2 border-gray-200 rounded-lg">
+            <div className="h-full  bg-white overflow-hidden border-2 border-gray-200 rounded-md">
               <img
                 className="object-cover object-center w-full lg:h-48 md:h-36"
                 src={LandFarmImage}
                 alt="blog"
               ></img>
               <div className="p-6">
-                <h2 className="mb-1 text-xs font-medium tracking-widest text-gray-500 title-font">
+                <h2 className="mb-1 text-xs text-celadon-blue-default font-medium tracking-widest text-gray-500 title-font">
                   CATEGORY
                 </h2>
                 <h1 className="mb-3 text-lg font-medium text-gray-900 title-font">
@@ -37,7 +37,10 @@ const OurBlogPage = () => (
                   jianbing microdosing tousled waistcoat.
                 </p>
                 <div className="flex flex-wrap items-center ">
-                  <Link className="inline-flex items-center text-primary md:mb-2 lg:mb-0" to="/blog-post">
+                  <Link
+                    className="inline-flex items-center font-main text-primary md:mb-2 lg:mb-0"
+                    to="/blog-post"
+                  >
                     Learn More
                     <svg
                       className="w-4 h-4 ml-2"
@@ -86,14 +89,14 @@ const OurBlogPage = () => (
             </div>
           </div>
           <div className="p-4 md:w-1/3">
-            <div className="h-full overflow-hidden border-2 border-gray-200 rounded-lg">
+            <div className="h-full bg-white overflow-hidden border-2 border-gray-200 rounded-md">
               <img
                 className="object-cover object-center w-full lg:h-48 md:h-36"
                 src={LandFarmImage}
                 alt="blog"
               ></img>
               <div className="p-6">
-                <h2 className="mb-1 text-xs font-medium tracking-widest text-gray-500 title-font">
+                <h2 className="mb-1 text-xs text-celadon-blue-default font-medium tracking-widest text-gray-500 title-font">
                   CATEGORY
                 </h2>
                 <h1 className="mb-3 text-lg font-medium text-gray-900 title-font">
@@ -104,7 +107,10 @@ const OurBlogPage = () => (
                   jianbing microdosing tousled waistcoat.
                 </p>
                 <div className="flex flex-wrap items-center">
-                  <Link className="inline-flex items-center text-primary md:mb-2 lg:mb-0" to="/blog-post">
+                  <Link
+                    className="inline-flex items-center font-main text-primary md:mb-2 lg:mb-0"
+                    to="/blog-post"
+                  >
                     Learn More
                     <svg
                       className="w-4 h-4 ml-2"
@@ -153,14 +159,14 @@ const OurBlogPage = () => (
             </div>
           </div>
           <div className="p-4 md:w-1/3">
-            <div className="h-full overflow-hidden border-2 border-gray-200 rounded-lg">
+            <div className="h-full bg-white overflow-hidden border-2 border-gray-200 rounded-md">
               <img
                 className="object-cover object-center w-full lg:h-48 md:h-36"
                 src={LandFarmImage}
                 alt="blog"
               ></img>
               <div className="p-6">
-                <h2 className="mb-1 text-xs font-medium tracking-widest text-gray-500 title-font">
+                <h2 className="mb-1 text-xs text-celadon-blue-default font-medium tracking-widest text-gray-500 title-font">
                   CATEGORY
                 </h2>
                 <h1 className="mb-3 text-lg font-medium text-gray-900 title-font">
@@ -171,7 +177,10 @@ const OurBlogPage = () => (
                   jianbing microdosing tousled waistcoat.
                 </p>
                 <div className="flex flex-wrap items-center ">
-                  <Link className="inline-flex items-center text-primary md:mb-2 lg:mb-0" to="/blog-post">
+                  <Link
+                    className="inline-flex items-center font-main text-primary md:mb-2 lg:mb-0"
+                    to="/blog-post"
+                  >
                     Learn More
                     <svg
                       className="w-4 h-4 ml-2"

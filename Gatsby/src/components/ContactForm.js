@@ -2,8 +2,22 @@ import React from 'react';
 
 import { Link } from 'gatsby';
 
-const ContactForm = ({ containerStyles, formStyles, formContainerStyles }) => (
-  <div className={containerStyles}>
+const ContactForm = ({
+  containerStyles,
+  formStyles,
+  formContainerStyles,
+  animation,
+  duration,
+  delay,
+  easing,
+}) => (
+  <div
+    data-sal={animation}
+    data-sal-duration={duration}
+    data-sal-delay={delay}
+    data-sal-easing={easing}
+    className={containerStyles}
+  >
     <div className={formContainerStyles}>
       <form className={formStyles} action="POST">
         <div>

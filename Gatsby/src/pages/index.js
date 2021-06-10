@@ -55,7 +55,7 @@ const IndexPage = ({ data }) => {
       <div className="sm:max-w-6xl pl-6 sm:pl-12 pr-6 sm:pr-12 pb-12 pt-20 mt-4 sm:m-auto ">
         <div className="flex flex-col sm:pb-10 md:pb-32 border-b-2 md:flex-row">
           <div className="flex flex-col sm:mb-10 order-2 justify-center max-w-md md:w-1/2">
-            <div className="text-2xl font-main font-black md:text-5xl text-primary">
+            <div className="text-4xl font-main font-bold leading-none text-primary md:text-5xl lg:text-6xl ">
               <span className="">{topSection.topMessage}</span>
             </div>
             <div className="mt-4 font-secondary text-xl">
@@ -80,7 +80,7 @@ const IndexPage = ({ data }) => {
           </div>
         </div>
         {/* Warranty Section*/}
-        <h1 className="py-4 text-center font-slim text-primary">
+        <h1 className="my-8 text-center text-4xl font-main font-bold leading-none text-primary md:text-5xl lg:text-6xl ">
           Warranty Service Center for
         </h1>
         {/* <div className="relative left-50 right-50 -ml-50 -mr-50 pt-2 pb-6 mx-auto border-b-2"> */}
@@ -104,7 +104,7 @@ const IndexPage = ({ data }) => {
         </div>
         {/* Our Products Section */}
         <div className=" pt-2 pb-6  mt-2 border-b-4 sm:block">
-          <h1 className="py-4 text-center text-primary font-slim text-brown">
+          <h1 className="text-center my-8 text-4xl font-main font-bold leading-none text-primary md:text-5xl lg:text-6xl ">
             What We Repair
           </h1>
           {repairSection.nodes.map(
@@ -147,15 +147,20 @@ const IndexPage = ({ data }) => {
           )}
         </div>
         {/* Contact Section */}
-        <h1 className="py-4 text-center text-primary font-slim text-brown">
+        <h1 className="text-center my-8 text-4xl font-main font-bold leading-none text-primary md:text-5xl lg:text-6xl ">
           Have a Question?
         </h1>
+
         <ContactForm
           containerStyles={
             'px-8 py-8 sm:py-16 bg-turquoise-blue-500 rounded-md'
           }
           formStyles={'sm:grid sm:gap-2 sm:grid-cols-2'}
           formContainerStyles={'container md:px-10 lg:px-16 mx-auto '}
+          animation={'flip-up'}
+          duration={'1000'}
+          delay={'300'}
+          easing={'ease'}
         />
       </div>
     </Layout>
