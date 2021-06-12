@@ -51,6 +51,14 @@ module.exports = {
         graphqlTag: 'default',
       },
     },
+    {
+      resolve: 'gatsby-plugin-sanity-image',
+      options: {
+        // Sanity project info (required)
+        projectId: `wgpo4u84`,
+        dataset: `production`,
+      },
+    },
 
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline

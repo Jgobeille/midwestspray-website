@@ -15,6 +15,8 @@ import socialMedia from "./socialMedia";
 import footer from "./footer";
 import contactInfo from "./contactInfo";
 import contactPage from "./contactPage";
+import aboutPage from "./aboutPage";
+import history from "./history";
 
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
@@ -37,5 +39,7 @@ export default createSchema({
     socialMedia,
     contactInfo,
     blockContent,
+    aboutPage,
+    history,
   ]),
 });

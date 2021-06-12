@@ -85,13 +85,32 @@ export default () =>
       S.listItem()
         .title("Contact Page")
         .child(
-          S.document().schemaType("contactPage").documentId("contactPage")
+          S.document()
+            .title("Contact Page")
+            .schemaType("contactPage")
+            .documentId("contactPage")
+        ),
+      S.listItem()
+        .title("About Page")
+        .child(
+          S.document()
+            .title("About Page")
+            .schemaType("aboutPage")
+            .documentId("aboutPage")
+        ),
+      S.listItem()
+        .title("Footer")
+        .child(
+          S.document().title("Footer").schemaType("footer").documentId("footer")
         ),
 
       ...S.documentTypeListItems().filter(
         (listItem) =>
           ![
             "post",
+            "history",
+            "footer",
+            "aboutPage",
             "author",
             "category",
             "contactPage",

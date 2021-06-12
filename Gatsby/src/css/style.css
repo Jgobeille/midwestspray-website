@@ -58,3 +58,12 @@ a:focus {
 .head-3 {
   @apply py-4 mb-2 text-xl font-bold;
 }
+
+.full-width {
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+}
