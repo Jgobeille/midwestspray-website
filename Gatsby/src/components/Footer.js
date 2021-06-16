@@ -86,7 +86,7 @@ const Footer = ({ companyName, contactData }) => {
           <h3 className="font-main mb-4 text-white text-lg">Company</h3>
           <Link
             className=" font-secondary text-sm mb-2 font-light leading-1  text-white focus:bg-gray-100 hover:no-underline"
-            href="/home"
+            href="/"
           >
             Home
           </Link>
@@ -98,7 +98,7 @@ const Footer = ({ companyName, contactData }) => {
           </Link>
           <Link
             className=" font-secondary text-sm mb-2 font-light leading-1  text-white focus:bg-gray-100 hover:no-underline"
-            href="/dougsBlog"
+            href="/dougs-blog"
           >
             Dougs Blog
           </Link>

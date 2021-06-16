@@ -10,8 +10,18 @@ module.exports = {
     author: 'Jamie Gobeille',
     company: 'Midwest Spray',
   },
+  flags: {
+    FUNCTIONS: true,
+  },
   plugins: [
-    'gatsby-plugin-postcss',
+    {
+      resolve: `gatsby-plugin-postcss`,
+      options: {
+        cssLoaderOptions: {
+          camelCase: false,
+        },
+      },
+    },
     'gatsby-plugin-root-import',
     'gatsby-plugin-react-helmet',
     {

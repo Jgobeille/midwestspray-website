@@ -13,11 +13,9 @@ export default () =>
             .title("Home Page Settings")
             .items([
               S.listItem()
-                .title("Hero Section Settings")
+                .title("Home Page")
                 .child(
-                  S.document()
-                    .schemaType("homePageTopSection")
-                    .documentId("homePageTopSection")
+                  S.document().schemaType("homePage").documentId("homePage")
                 ),
               S.listItem()
                 .title("Repair Section Settings")
@@ -93,10 +91,25 @@ export default () =>
       S.listItem()
         .title("About Page")
         .child(
-          S.document()
-            .title("About Page")
-            .schemaType("aboutPage")
-            .documentId("aboutPage")
+          S.list()
+            .title("About Page Settings")
+            .items([
+              S.listItem()
+                .title("About Page")
+                .child(
+                  S.document()
+                    .title("Settings")
+                    .schemaType("aboutPage")
+                    .documentId("aboutPage")
+                ),
+              S.listItem()
+                .title("History Section Settings")
+                .child(
+                  S.documentList()
+                    .title("All History")
+                    .filter('_type == "history"')
+                ),
+            ])
         ),
       S.listItem()
         .title("Footer")
@@ -111,10 +124,11 @@ export default () =>
             "history",
             "footer",
             "aboutPage",
+            "pageNames",
             "author",
             "category",
             "contactPage",
-            "homePageTopSection",
+            "homePage",
             "homePageRepairSection",
           ].includes(listItem.getId())
       ),

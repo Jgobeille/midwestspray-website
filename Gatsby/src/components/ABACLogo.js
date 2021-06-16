@@ -6,7 +6,7 @@ const ABACLogo = () => {
   return (
     <StaticImage
       className="mx-2"
-      src="../images/ABAC-logo.gif"
+      src="../images/ABAC-logo.png"
       alt="ABAC logo"
       height={200}
       width={700}

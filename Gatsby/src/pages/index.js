@@ -1,8 +1,6 @@
 import React from 'react';
 import { graphql, Link } from 'gatsby';
 
-import Layout from '../components/Layout';
-
 import SEO from '../components/SEO';
 import SpraymanImage from '../components/SpraymanImage';
 import TitanLogo from '../components/TitanLogo';
@@ -19,54 +17,52 @@ import ContactForm from '../components/ContactForm';
 
 export const query = graphql`
   query {
-    topSection: sanityHomePageTopSection {
-      id
+    homePage: sanityHomePage {
       button
-      buttonUrl
-      description
-      topMessage
-    }
-    repairSection: allSanityHomePageRepairSection {
-      nodes {
-        id
-        title
-        button
-        buttonUrl
-        description
-        addButton
-        image {
-          asset {
-            fluid(maxWidth: 500) {
-              ...GatsbySanityImageFluid
-            }
-          }
-        }
+      buttonUrl {
+        page
       }
+      description
+      id
+      repairSection {
+        buttonUrl {
+          page
+        }
+        description
+        image {
+          ...ImageWithPreview
+        }
+        title
+        id
+        button
+      }
+      topMessage
     }
   }
 `;
 
 const IndexPage = ({ data }) => {
-  const { topSection, repairSection } = data;
+  const { homePage } = data;
+
   return (
-    <Layout>
+    <>
       <SEO title="Home" />
 
       <div className="sm:max-w-6xl pl-6 sm:pl-12 pr-6 sm:pr-12 pb-12 pt-20 mt-4 sm:m-auto ">
         <div className="flex flex-col sm:pb-10 md:pb-32 border-b-2 md:flex-row">
           <div className="flex flex-col sm:mb-10 order-2 justify-center max-w-md md:w-1/2">
             <div className="text-4xl font-main font-bold leading-none text-primary md:text-5xl lg:text-6xl ">
-              <span className="">{topSection.topMessage}</span>
+              <span className="">{homePage.topMessage}</span>
             </div>
             <div className="mt-4 font-secondary text-xl">
-              {topSection.description}
+              {homePage.description}
             </div>
             <div className="h-16 my-5 mt-10">
               <Link
-                to={topSection.buttonUrl}
+                to={homePage.buttonUrl.page}
                 className="px-4 font-main py-2 text-white rounded-sm shadow-sm sm:relative sm:top-4 bg-celadon-blue-default hover:no-underline hover:bg-celadon-blue-dark"
               >
-                {topSection.button}
+                {homePage.button}
               </Link>
             </div>
           </div>
@@ -107,7 +103,7 @@ const IndexPage = ({ data }) => {
           <h1 className="text-center my-8 text-4xl font-main font-bold leading-none text-primary md:text-5xl lg:text-6xl ">
             What We Repair
           </h1>
-          {repairSection.nodes.map(
+          {homePage.repairSection.map(
             (
               { id, addButton, button, buttonUrl, description, image, title },
               i
@@ -165,7 +161,7 @@ const IndexPage = ({ data }) => {
           easing={'ease'}
         />
       </div>
-    </Layout>
+    </>
   );
 };
 

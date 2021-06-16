@@ -9,7 +9,7 @@ import blockContent from "./blockContent";
 import category from "./category";
 import post from "./post";
 import author from "./author";
-import homePageTopSection from "./homePageTopSection";
+import homePage from "./homePage";
 import homePageRepairSection from "./homePageRepairSection";
 import socialMedia from "./socialMedia";
 import footer from "./footer";
@@ -17,6 +17,10 @@ import contactInfo from "./contactInfo";
 import contactPage from "./contactPage";
 import aboutPage from "./aboutPage";
 import history from "./history";
+import pageNames from "./pageNames";
+import photoGallery from "./photoGallery";
+import photoGalleryImage from "./photoGalleryImage";
+import ImageComponent from "./ImageComponent";
 
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
@@ -34,12 +38,16 @@ export default createSchema({
     contactPage,
     // When added to this list, object types can be used as
     // { type: 'typename' } in other document schemas
-    homePageTopSection,
+    homePage,
     homePageRepairSection,
     socialMedia,
     contactInfo,
     blockContent,
     aboutPage,
     history,
+    pageNames,
+    photoGallery,
+    photoGalleryImage,
+    ImageComponent,
   ]),
 });

@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'gatsby';
 import LandFarmImage from '../images/land-at-sunset.jpg';
-import Layout from '../components/Layout';
+
 import SEO from '../components/SEO';
 import {
   EmailIcon,
@@ -13,7 +13,7 @@ import {
 } from 'react-share';
 
 const BlogPostPage = () => (
-  <Layout>
+  <>
     <SEO title="Post - Blog" />
 
     <div className="flex-grow max-w-4xl px-4 mx-auto mt-10 lg:px-0">
@@ -100,7 +100,7 @@ const BlogPostPage = () => (
         </div>
       </div>
     </div>
-  </Layout>
+  </>
 );
 
 export default BlogPostPage;

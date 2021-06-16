@@ -1,36 +1,45 @@
 import React from 'react';
 import { graphql, Link } from 'gatsby';
 
-import Layout from '../components/Layout';
-import FarmImage from '../images/land-at-sunset.jpg';
 import SEO from '../components/SEO';
-import SpraymanImageV2 from '../components/SpraymanImageV2';
-import { StaticImage } from 'gatsby-plugin-image';
+
 import SanityImageComponent from '../components/SanityImageComponent';
-import SanityImage from 'gatsby-plugin-sanity-image';
+
 import AboutHistoryComponent from '../components/AboutHistoryComponent';
+
+import { GatsbyImage, getImage } from 'gatsby-plugin-image';
 
 export const query = graphql`
   query MyQuery {
     about: sanityAboutPage {
+      aboutTopTitle
       aboutSectionDescription
-      aboutSectionTitle
       aboutSectionImage {
         ...ImageWithPreview
       }
+      aboutSectionTitle
       aboutTitleDescription
       aboutTitleImage {
         ...ImageWithPreview
       }
-      aboutTopTitle
       history {
-        description
-        title
+        imageCaption
         date(formatString: "MMMM-YYYY")
+        description
         image {
           ...ImageWithPreview
         }
-        imageCaption
+        title
+      }
+      photoGallery {
+        images {
+          alt
+          display
+          asset {
+            id
+            gatsbyImageData
+          }
+        }
       }
     }
   }
@@ -39,8 +48,10 @@ export const query = graphql`
 const AboutPage = ({ data }) => {
   const { about } = data;
 
+  let delay = 0;
+
   return (
-    <Layout>
+    <>
       <SEO title="Our Story" />
       <div className="sm:max-w-6xl pl-6 sm:pl-12 pr-6 sm:pr-12 py-12 mt-4 sm:m-auto ">
         <div className="flex flex-col sm:pb-10 sm:py-8 border-b-2 md:flex-row">
@@ -90,90 +101,41 @@ const AboutPage = ({ data }) => {
                   date={date}
                   image={image}
                   imageCaption={imageCaption}
+                  width
                 />
               );
             }
           )}
         </div>
-        <div className="flex flex-col mt-8 border-b-2">
+        <div className="flex flex-col mt-8">
           <h1 className="text-center text-4xl font-main font-bold leading-none text-primary md:text-5xl lg:text-6xl ">
             Gallery
           </h1>
 
           <div className="md:grid md:grid-cols-masonry md:gap-4">
-            <span
-              className="row-span-2"
-              data-sal="flip-up"
-              data-sal-duration="500"
-              data-sal-delay="100"
-              data-sal-easing="ease"
-            >
-              <StaticImage
-                className="h-full w-full  "
-                src="../images/simplicity-farms.jpg"
-                alt="dad-car"
-              />
-            </span>
-            <span
-              className="row-span-2 col-span-2 row-span-2"
-              data-sal="flip-up"
-              data-sal-duration="500"
-              data-sal-delay="150"
-              data-sal-easing="ease"
-            >
-              <StaticImage
-                className="h-full w-full"
-                src="../images/paint-sprayer.jpeg"
-                alt="dad-car"
-              />
-            </span>
-            <span
-              className="col-span-2"
-              data-sal="flip-up"
-              data-sal-duration="500"
-              data-sal-delay="200"
-              data-sal-easing="ease"
-            >
-              <StaticImage
-                className="h-full w-full "
-                src="../images/logo.png"
-                alt="dad-car"
-              />
-            </span>
-            <StaticImage
-              className="h-full w-full col-span-2 row-span-2"
-              src="../images/generator-image.png"
-              alt="dad-car"
-            />
-            <StaticImage
-              className="h-full w-full"
-              src="../images/paint-sprayer.jpeg"
-              alt="dad-car"
-            />
-            <StaticImage
-              className="h-full w-full"
-              src="../images/generator-image.png"
-              alt="dad-car"
-            />
-            <StaticImage
-              className="h-full w-full row-span-2"
-              src="../images/simplicity-farms.jpg"
-              alt="dad-car"
-            />
-            <StaticImage
-              className="h-full w-full col-span-2"
-              src="../images/logo.png"
-              alt="dad-car"
-            />
-            <StaticImage
-              className="h-full w-full"
-              src="../images/paint-sprayer.jpeg"
-              alt="dad-car"
-            />
+            {about.photoGallery.images.map((image) => {
+              delay += 100;
+              return (
+                <span
+                  data-sal="flip-up"
+                  data-sal-duration="500"
+                  data-sal-delay={delay}
+                  data-sal-easing="ease"
+                  className={image.display}
+                >
+                  <GatsbyImage
+                    className={`h-full w-full `}
+                    image={image.asset.gatsbyImageData}
+                    alt={image.alt}
+                    key={image.id}
+                  />
+                </span>
+              );
+            })}
           </div>
         </div>
       </div>
-    </Layout>
+    </>
   );
 };
 

@@ -2,7 +2,7 @@ import React from 'react';
 
 import { Link } from 'gatsby';
 
-import { GatsbyImage, getImage } from 'gatsby-plugin-image';
+import SanityImageComponent from '../components/SanityImageComponent';
 
 const WhatWeRepair = ({
   title,
@@ -44,7 +44,7 @@ const WhatWeRepair = ({
         className={imageClasses}
       >
         {' '}
-        <img src={image.asset.fluid.src} alt="" />
+        <SanityImageComponent source={image} />
       </div>
     </div>
   );

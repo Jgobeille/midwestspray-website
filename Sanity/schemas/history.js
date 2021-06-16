@@ -1,7 +1,7 @@
 export default {
   name: "history",
   title: "History",
-  type: "document",
+  type: "object",
   fields: [
     {
       name: "title",

@@ -30,8 +30,10 @@ export const data = graphql`
 const ContactPage = ({ data }) => {
   const { contactData, description } = data;
 
+  console.log(data);
+
   return (
-    <Layout>
+    <>
       <SEO title="Contact Us" />
 
       <div className="py-12">
@@ -139,7 +141,7 @@ const ContactPage = ({ data }) => {
           </div>
         </div>
       </div>
-    </Layout>
+    </>
   );
 };
 

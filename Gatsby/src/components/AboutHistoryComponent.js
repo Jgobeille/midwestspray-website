@@ -8,7 +8,6 @@ const AboutHistoryComponent = ({
   image,
   imageCaption,
 }) => {
-  console.log(image);
   return (
     <div
       data-sal="slide-left"
@@ -36,7 +35,7 @@ const AboutHistoryComponent = ({
       <div class="flex flex-wrap lg:justify-left pl-4 h-full w-full md:w-1/2 mb-6 ">
         {image ? (
           <div class="p-4 text-center bg-white hover:bg-gray-100 hover:shadow-lg transition border rounded m-2 h-3/4 pb-10 sm:pb-auto sm:h-full flex flex-col justify-between">
-            <SanityImageComponent source={image} />
+            <SanityImageComponent source={image} width={300} height={200} />
             <h2 class="text-sm sm:text-lg mb-0 text-gray-900">
               {imageCaption}
             </h2>

@@ -9,7 +9,7 @@ import Layout from 'src/components/Layout';
 import SEO from 'src/components/SEO';
 
 const OurTeamPage = () => (
-  <Layout>
+  <>
     <SEO title="Our Team" />
 
     <div className="max-w-6xl p-2 mt-4 sm:m-auto sm:p-12">
@@ -258,7 +258,7 @@ const OurTeamPage = () => (
         </div>
       </section>
     </div>
-  </Layout>
+  </>
 );
 
 export default OurTeamPage;

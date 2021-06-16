@@ -37,12 +37,16 @@ function Header({ siteTitle }) {
               title: `About`,
             },
             {
-              route: `/our-blog`,
+              route: `/dougs-blog`,
               title: `Dougs Blog`,
             },
             {
               route: `/our-team`,
               title: `Equipment`,
+            },
+            {
+              route: `/contact`,
+              title: `Contact`,
             },
           ].map((link) => (
             <Link
@@ -99,12 +103,16 @@ function Header({ siteTitle }) {
                       title: `About`,
                     },
                     {
-                      route: `/our-blog`,
+                      route: `/dougs-blog`,
                       title: `Dougs Blog`,
                     },
                     {
                       route: `/our-team`,
                       title: `Equipment`,
+                    },
+                    {
+                      route: `/contact`,
+                      title: `Contact`,
                     },
                   ].map((link) => (
                     <Link

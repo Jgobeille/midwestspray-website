@@ -18,10 +18,7 @@ export default {
     {
       name: "aboutTitleImage",
       title: "Image",
-      type: "image",
-      options: {
-        hotspot: true, // <-- Defaults to false
-      },
+      type: "imageComponent",
     },
     {
       name: "aboutSectionTitle",
@@ -38,16 +35,19 @@ export default {
     {
       name: "aboutSectionImage",
       title: "Image",
-      type: "image",
-      options: {
-        hotspot: true, // <-- Defaults to false
-      },
+      type: "imageComponent",
     },
     {
       name: "history",
       title: "History Section",
       type: "array",
       of: [{ type: "reference", to: { type: "history" } }],
+    },
+    // Photo Gallery
+    {
+      name: "photoGallery",
+      title: "Photo Gallery",
+      type: "photoGallery",
     },
   ],
 };
