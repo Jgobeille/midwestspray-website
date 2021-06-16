@@ -84,19 +84,19 @@ const SingleBlogPost = ({ data }) => {
               <div className="flex flex-row md:flex-col">
                 <FacebookShareButton
                   className="mr-2 mb-2 sm:mr-0"
-                  url={`http://localhost:8000/dougs-blog/${post.slug.current}`}
+                  url={`https://midwestspraywebsitemaster.gatsbyjs.io/dougs-blog/${post.slug.current}`}
                 >
                   <FacebookIcon size={40} round={true} />
                 </FacebookShareButton>
                 <TwitterShareButton
                   className="mr-2 mb-2 sm:mr-0"
-                  url={`http://localhost:8000/dougs-blog/${post.slug.current}`}
+                  url={`https://midwestspraywebsitemaster.gatsbyjs.io/dougs-blog/${post.slug.current}`}
                 >
                   <TwitterIcon size={40} round={true} />
                 </TwitterShareButton>
                 <EmailShareButton
                   className="mb-2"
-                  url={`http://localhost:8000/dougs-blog/${post.slug.current}`}
+                  url={`https://midwestspraywebsitemaster.gatsbyjs.io/dougs-blog/${post.slug.current}`}
                 >
                   <EmailIcon size={40} round={true} />
                 </EmailShareButton>
