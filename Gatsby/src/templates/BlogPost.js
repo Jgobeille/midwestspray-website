@@ -12,10 +12,9 @@ import {
   TwitterIcon,
   TwitterShareButton,
 } from 'react-share';
-import SanityImageComponent from '../components/SanityImageComponent';
-import { GatsbyImage, getImage } from 'gatsby-plugin-image';
+
+import { GatsbyImage } from 'gatsby-plugin-image';
 import BlockContent from '@sanity/block-content-to-react';
-import CHLogo from '../components/CHLogo';
 
 export const data = graphql`
   query ($slug: String!) {
@@ -47,7 +46,12 @@ const SingleBlogPost = ({ data }) => {
 
   return (
     <>
-      <SEO title={post.title} />
+      <SEO
+        title={post.title}
+        description={post.description}
+        image={post.mainImage}
+        pathname={window.location.pathname}
+      />
 
       <div className="flex-grow max-w-4xl px-4 mx-auto mt-10 lg:px-0">
         <div className="flex flex-col md:flex-row">
@@ -84,19 +88,19 @@ const SingleBlogPost = ({ data }) => {
               <div className="flex flex-row md:flex-col">
                 <FacebookShareButton
                   className="mr-2 mb-2 sm:mr-0"
-                  url={`https://midwestspraywebsitemaster.gatsbyjs.io/dougs-blog/${post.slug.current}`}
+                  url={`${window.location.href}/${post.slug.current}`}
                 >
                   <FacebookIcon size={40} round={true} />
                 </FacebookShareButton>
                 <TwitterShareButton
                   className="mr-2 mb-2 sm:mr-0"
-                  url={`https://midwestspraywebsitemaster.gatsbyjs.io/dougs-blog/${post.slug.current}`}
+                  url={`${window.location.href}/${post.slug.current}`}
                 >
                   <TwitterIcon size={40} round={true} />
                 </TwitterShareButton>
                 <EmailShareButton
                   className="mb-2"
-                  url={`https://midwestspraywebsitemaster.gatsbyjs.io/dougs-blog/${post.slug.current}`}
+                  url={`${window.location.href}/${post.slug.current}`}
                 >
                   <EmailIcon size={40} round={true} />
                 </EmailShareButton>

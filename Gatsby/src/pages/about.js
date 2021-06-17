@@ -15,19 +15,25 @@ export const query = graphql`
       aboutTopTitle
       aboutSectionDescription
       aboutSectionImage {
-        ...ImageWithPreview
+        asset {
+          gatsbyImageData
+        }
       }
       aboutSectionTitle
       aboutTitleDescription
       aboutTitleImage {
-        ...ImageWithPreview
+        asset {
+          gatsbyImageData
+        }
       }
       history {
         imageCaption
         date(formatString: "MMMM-YYYY")
         description
         image {
-          ...ImageWithPreview
+          asset {
+            gatsbyImageData
+          }
         }
         title
       }
@@ -53,7 +59,7 @@ const AboutPage = ({ data }) => {
   return (
     <>
       <SEO title="Our Story" />
-      <div className="sm:max-w-6xl pl-6 sm:pl-12 pr-6 sm:pr-12 py-12 mt-4 sm:m-auto ">
+      <div className="sm:max-w-6xl pl-6 sm:pl-12 pr-6 sm:pr-12 py-12 mt-4 sm:m-auto overflow-hidden">
         <div className="flex flex-col sm:pb-10 sm:py-8 border-b-2 md:flex-row">
           <div className="flex flex-col justify-center max-w-md md:w-1/2">
             <div className="text-2xl font-main font-black md:text-5xl text-primary">
@@ -65,20 +71,20 @@ const AboutPage = ({ data }) => {
           </div>
           {/* Hero Section */}
           <div className="flex flex-col w-full my-8 justify-center items-center md:w-1/2">
-            <SanityImageComponent
-              source={about.aboutTitleImage}
-              styles={'mx-2'}
+            <GatsbyImage
+              className={`h-full w-full `}
+              image={about.aboutTitleImage.asset.gatsbyImageData}
+              // alt={about.alt}
             />
           </div>
         </div>
         <div className="flex flex-col sm:py-8 md:py-16 sm:pb-10 md:pb-16 border-b-2 md:flex-row">
           {/* Hero Section */}
           <div className="flex flex-col w-full mb-8 md:justify-center md:items-center order-2 md:order-1">
-            <SanityImageComponent
-              source={about.aboutSectionImage}
-              styles={'mx-2'}
-              width={500}
-              height={800}
+            <GatsbyImage
+              className={`h-full w-full `}
+              image={about.aboutSectionImage.asset.gatsbyImageData}
+              // alt={about.alt}
             />
           </div>
           <div className="flex flex-col w-full my-8  md:ml-8 justify-center order-1 md:order-2">

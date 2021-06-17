@@ -41,7 +41,7 @@ function Header({ siteTitle }) {
               title: `Dougs Blog`,
             },
             {
-              route: `/our-team`,
+              route: `/equipment`,
               title: `Equipment`,
             },
             {
@@ -107,7 +107,7 @@ function Header({ siteTitle }) {
                       title: `Dougs Blog`,
                     },
                     {
-                      route: `/our-team`,
+                      route: `/equipment`,
                       title: `Equipment`,
                     },
                     {

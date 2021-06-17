@@ -6,9 +6,12 @@ module.exports = {
   siteMetadata: {
     title: 'Midwest Spray',
     description:
-      'A Simple, Free Gatsby/TailwindCSS Starter Theme For Business Websites',
+      'Midwest Spray is a paint spray repair company located in Cincinnati, Ohio.',
     author: 'Jamie Gobeille',
     company: 'Midwest Spray',
+    siteUrl: 'www.midwestspray.com',
+    keywords:
+      'Paint Sprayers, Warranty service, Generators, Air compressors, Cincinnati, Ohio, Campbell Hausfeld, Graco, Titan, Wagner, ABAC Air Compressors, Belaire Compressors, Eaton Compressors ',
   },
   flags: {
     FUNCTIONS: true,
@@ -38,8 +41,8 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-manifest',
       options: {
-        name: 'gatsby-tailwind-simplicity-theme',
-        short_name: 'simplicity-itself',
+        name: 'Midwest-Spray-Website',
+        short_name: 'Midwest-Spray',
         start_url: '/',
         background_color: '#FFFFFF',
         theme_color: '#5D9D0E',

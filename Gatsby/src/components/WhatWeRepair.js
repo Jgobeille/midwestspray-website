@@ -16,7 +16,7 @@ const WhatWeRepair = ({
   slideDirection,
 }) => {
   return (
-    <div className="flex flex-col pb-10 md:flex-row">
+    <div className="flex flex-col pb-10 md:flex-row overflow-hidden">
       <div className={textClasses}>
         <div className="font-alt font-black md:text-2xl text-primary">
           <h3 className="">{title}</h3>

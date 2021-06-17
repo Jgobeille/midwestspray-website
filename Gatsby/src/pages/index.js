@@ -118,7 +118,7 @@ const IndexPage = ({ data }) => {
                   image={image}
                   title={title}
                   textClasses={
-                    'flex flex-col order-1 mb-10 sm:mr-16 justify-center max-w-md md:w-1/2'
+                    'flex flex-col order-1 mb-10 sm:mr-16 justify-center max-w-md md:w-1/2 '
                   }
                   imageClasses={'flex flex-col order-2  max-w-md md:w-1/2'}
                   slideDirection={'slide-left'}
@@ -133,7 +133,7 @@ const IndexPage = ({ data }) => {
                   image={image}
                   title={title}
                   textClasses={
-                    'flex flex-col order-1 md:order-2 mb-10 sm:ml-16 justify-center max-w-md md:w-1/2'
+                    'flex flex-col order-1 md:order-2 mb-10 sm:ml-16 justify-center max-w-md md:w-1/2 '
                   }
                   imageClasses={
                     'flex flex-col order-2 md:order-1  max-w-md md:w-1/2'
@@ -151,11 +151,11 @@ const IndexPage = ({ data }) => {
 
         <ContactForm
           containerStyles={
-            'full-width md:inset-x-0 md:w-full md:mx-0 md:px-8 py-8 sm:py-16 bg-turquoise-blue-500 rounded-md'
+            'full-width md:inset-x-0 md:w-full md:mx-0 md:px-8 py-8 sm:py-16 bg-turquoise-blue-500 rounded-md '
           }
           formStyles={'sm:grid sm:gap-2 sm:grid-cols-2'}
           formContainerStyles={'container px-5 md:px-10 lg:px-16 mx-auto '}
-          animation={'flip-up'}
+          animation={'fade'}
           duration={'1000'}
           delay={'300'}
           easing={'ease'}
