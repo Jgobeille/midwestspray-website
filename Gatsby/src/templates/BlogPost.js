@@ -41,7 +41,8 @@ export const data = graphql`
   }
 `;
 
-const SingleBlogPost = ({ data }) => {
+// Info on location prop: https://www.gatsbyjs.com/docs/location-data-from-props/#what-is-location-data
+const SingleBlogPost = ({ data, location }) => {
   const { post } = data;
 
   return (
@@ -50,7 +51,7 @@ const SingleBlogPost = ({ data }) => {
         title={post.title}
         description={post.description}
         image={post.mainImage}
-        pathname={window.location.pathname}
+        pathname={location.href}
       />
 
       <div className="flex-grow max-w-4xl px-4 mx-auto mt-10 lg:px-0">
@@ -88,20 +89,17 @@ const SingleBlogPost = ({ data }) => {
               <div className="flex flex-row md:flex-col">
                 <FacebookShareButton
                   className="mr-2 mb-2 sm:mr-0"
-                  url={`${window.location.href}/${post.slug.current}`}
+                  url={`${location.href}`}
                 >
                   <FacebookIcon size={40} round={true} />
                 </FacebookShareButton>
                 <TwitterShareButton
                   className="mr-2 mb-2 sm:mr-0"
-                  url={`${window.location.href}/${post.slug.current}`}
+                  url={`${location.href}`}
                 >
                   <TwitterIcon size={40} round={true} />
                 </TwitterShareButton>
-                <EmailShareButton
-                  className="mb-2"
-                  url={`${window.location.href}/${post.slug.current}`}
-                >
+                <EmailShareButton className="mb-2" url={`${location.href}`}>
                   <EmailIcon size={40} round={true} />
                 </EmailShareButton>
               </div>

@@ -9,7 +9,7 @@ module.exports = {
       'Midwest Spray is a paint spray repair company located in Cincinnati, Ohio.',
     author: 'Jamie Gobeille',
     company: 'Midwest Spray',
-    siteUrl: 'www.midwestspray.com',
+    siteUrl: 'https://www.midwestspray.com',
     keywords:
       'Paint Sprayers, Warranty service, Generators, Air compressors, Cincinnati, Ohio, Campbell Hausfeld, Graco, Titan, Wagner, ABAC Air Compressors, Belaire Compressors, Eaton Compressors ',
   },
