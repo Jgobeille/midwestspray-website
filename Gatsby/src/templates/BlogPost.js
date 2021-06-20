@@ -50,7 +50,7 @@ const SingleBlogPost = ({ data, location }) => {
       <SEO
         title={post.title}
         description={post.description}
-        image={post.mainImage}
+        image={post.mainImage.asset.gatsbyImageData}
         pathname={location.href}
       />
 

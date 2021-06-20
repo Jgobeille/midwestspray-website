@@ -40,7 +40,7 @@ const AboutHistoryComponent = ({
             <GatsbyImage
               className={`h-full w-full `}
               image={image.asset.gatsbyImageData}
-              // alt={image.alt}
+              alt={imageCaption}
               key={image.id}
             />
             <h2 class="text-sm sm:text-lg mb-0 text-gray-900">

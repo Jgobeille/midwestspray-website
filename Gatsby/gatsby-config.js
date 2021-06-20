@@ -9,7 +9,7 @@ module.exports = {
       'Midwest Spray is a paint spray repair company located in Cincinnati, Ohio.',
     author: 'Jamie Gobeille',
     company: 'Midwest Spray',
-    siteUrl: 'https://www.midwestspray.com',
+    siteUrl: 'https://midwestspraywebsitemaster.gatsbyjs.io/',
     keywords:
       'Paint Sprayers, Warranty service, Generators, Air compressors, Cincinnati, Ohio, Campbell Hausfeld, Graco, Titan, Wagner, ABAC Air Compressors, Belaire Compressors, Eaton Compressors ',
   },
@@ -62,6 +62,7 @@ module.exports = {
         // If the Sanity GraphQL API was deployed using `--tag <name>`,
         // use `graphqlTag` to specify the tag name. Defaults to `default`.
         graphqlTag: 'default',
+        apiVersion: '2021-03-25',
       },
     },
     {
@@ -70,6 +71,21 @@ module.exports = {
         // Sanity project info (required)
         projectId: `wgpo4u84`,
         dataset: `production`,
+      },
+    },
+    {
+      resolve: 'gatsby-plugin-robots-txt',
+      options: {
+        host: 'https://midwestspraywebsitemaster.gatsbyjs.io/',
+        sitemap: 'https://midwestspraywebsitemaster.gatsbyjs.io/sitemap.xml',
+        env: {
+          development: {
+            policy: [{ userAgent: '*', disallow: ['/'] }],
+          },
+          production: {
+            policy: [{ userAgent: '*', allow: '/' }],
+          },
+        },
       },
     },
 

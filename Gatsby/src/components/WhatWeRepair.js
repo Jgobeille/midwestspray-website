@@ -2,7 +2,7 @@ import React from 'react';
 
 import { Link } from 'gatsby';
 
-import SanityImageComponent from '../components/SanityImageComponent';
+import { GatsbyImage } from 'gatsby-plugin-image';
 
 const WhatWeRepair = ({
   title,
@@ -11,10 +11,12 @@ const WhatWeRepair = ({
   buttonText,
   buttonUrl,
   image,
+  alt,
   textClasses,
   imageClasses,
   slideDirection,
 }) => {
+  console.log(image);
   return (
     <div className="flex flex-col pb-10 md:flex-row overflow-hidden">
       <div className={textClasses}>
@@ -44,7 +46,11 @@ const WhatWeRepair = ({
         className={imageClasses}
       >
         {' '}
-        <SanityImageComponent source={image} />
+        <GatsbyImage
+          className={`h-full w-full `}
+          image={image.asset.gatsbyImageData}
+          alt={alt}
+        />
       </div>
     </div>
   );

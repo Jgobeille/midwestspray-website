@@ -30,8 +30,11 @@ export const query = graphql`
         }
         description
         image {
-          ...ImageWithPreview
+          asset {
+            gatsbyImageData
+          }
         }
+        alt
         title
         id
         button
@@ -105,7 +108,16 @@ const IndexPage = ({ data }) => {
           </h1>
           {homePage.repairSection.map(
             (
-              { id, addButton, button, buttonUrl, description, image, title },
+              {
+                id,
+                addButton,
+                button,
+                buttonUrl,
+                description,
+                image,
+                alt,
+                title,
+              },
               i
             ) => {
               return i % 2 == 0 ? (
@@ -117,6 +129,7 @@ const IndexPage = ({ data }) => {
                   description={description}
                   image={image}
                   title={title}
+                  alt={alt}
                   textClasses={
                     'flex flex-col order-1 mb-10 sm:mr-16 justify-center max-w-md md:w-1/2 '
                   }
@@ -131,6 +144,7 @@ const IndexPage = ({ data }) => {
                   buttonUrl={buttonUrl}
                   description={description}
                   image={image}
+                  alt={alt}
                   title={title}
                   textClasses={
                     'flex flex-col order-1 md:order-2 mb-10 sm:ml-16 justify-center max-w-md md:w-1/2 '

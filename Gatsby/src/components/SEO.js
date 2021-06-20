@@ -86,6 +86,10 @@ function SEO({ description, lang, meta, image: metaImage, title, pathname }) {
           content: metaDescription,
         },
         {
+          name: `twitter:image`,
+          content: image,
+        },
+        {
           name: 'keywords',
           content: site.siteMetadata.keywords,
         },

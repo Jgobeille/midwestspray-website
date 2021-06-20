@@ -3,11 +3,9 @@ import { graphql, Link } from 'gatsby';
 
 import SEO from '../components/SEO';
 
-import SanityImageComponent from '../components/SanityImageComponent';
-
 import AboutHistoryComponent from '../components/AboutHistoryComponent';
 
-import { GatsbyImage, getImage } from 'gatsby-plugin-image';
+import { GatsbyImage } from 'gatsby-plugin-image';
 
 export const query = graphql`
   query MyQuery {
@@ -19,6 +17,7 @@ export const query = graphql`
           gatsbyImageData
         }
       }
+      aboutSectionImageAlt
       aboutSectionTitle
       aboutTitleDescription
       aboutTitleImage {
@@ -26,6 +25,7 @@ export const query = graphql`
           gatsbyImageData
         }
       }
+      aboutTitleImageAlt
       history {
         imageCaption
         date(formatString: "MMMM-YYYY")
@@ -74,7 +74,7 @@ const AboutPage = ({ data }) => {
             <GatsbyImage
               className={`h-full w-full `}
               image={about.aboutTitleImage.asset.gatsbyImageData}
-              // alt={about.alt}
+              alt={about.aboutTitleImageAlt}
             />
           </div>
         </div>
@@ -84,7 +84,7 @@ const AboutPage = ({ data }) => {
             <GatsbyImage
               className={`h-full w-full `}
               image={about.aboutSectionImage.asset.gatsbyImageData}
-              // alt={about.alt}
+              alt={about.aboutSectionImageAlt}
             />
           </div>
           <div className="flex flex-col w-full my-8  md:ml-8 justify-center order-1 md:order-2">
