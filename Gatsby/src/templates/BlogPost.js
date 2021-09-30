@@ -1,7 +1,6 @@
 import React from 'react';
 
 import { graphql } from 'gatsby';
-import LandFarmImage from '../images/land-at-sunset.jpg';
 
 import SEO from '../components/SEO';
 import {

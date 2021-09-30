@@ -126,7 +126,7 @@ const Footer = ({ companyName, contactData }) => {
           />
           <div className="mt-4">
             <Link
-              to="/contact"
+              to=""
               className="px-2 mt-8 font-secondary py-1 text-black text-sm bg-white rounded-sm shadow-sm  sm:top-4  hover:no-underline"
             >
               Submit

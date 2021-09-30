@@ -5040,7 +5040,7 @@ const Footer = ({
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2___default().createElement("div", {
     className: "mt-4"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2___default().createElement(gatsby__WEBPACK_IMPORTED_MODULE_1__.Link, {
-    to: "/contact",
+    to: "",
     className: "px-2 mt-8 font-secondary py-1 text-black text-sm bg-white rounded-sm shadow-sm  sm:top-4  hover:no-underline"
   }, "Submit")))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2___default().createElement("div", {
     className: "col-span-5 flex flex-col  justify-center "
