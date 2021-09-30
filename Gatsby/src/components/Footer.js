@@ -15,6 +15,7 @@ const Footer = ({ companyName, contactData }) => {
           <div className="flex flex-row">
             {socialMedia.facebook ? (
               <a href={socialMedia.facebook}>
+                <span className="hidden">Facebook</span>
                 <svg
                   className="w-6 h-6 mr-4 fill-current text-white hover:text-secondary"
                   viewBox="0 0 512 512"
@@ -27,6 +28,7 @@ const Footer = ({ companyName, contactData }) => {
             )}
             {socialMedia.email ? (
               <a href={`mailto:${socialMedia.email}`}>
+                <span className="hidden">Email</span>
                 <svg
                   fill="none"
                   className="w-6 h-6 mr-4 text-white hover:text-secondary"

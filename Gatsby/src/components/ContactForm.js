@@ -41,8 +41,6 @@ const ContactForm = ({
       message: values.message,
     };
 
-    console.log(body);
-
     // 4. send this data the serverless when they check out
     const res = await fetch(`/api/contactRequest`, {
       method: 'POST',
@@ -80,7 +78,9 @@ const ContactForm = ({
           action="/api/contactRequest"
         >
           <div>
-            <label htmlFor="first name">First Name *Required</label>
+            <label for="firstName" htmlFor="first name">
+              First Name *Required
+            </label>
             <br />
             <input
               name="firstName"
@@ -92,7 +92,9 @@ const ContactForm = ({
             />
           </div>
           <div>
-            <label htmlFor="last name">Last Name *Required</label>
+            <label for="lastName" htmlFor="last name">
+              Last Name *Required
+            </label>
             <br />
             <input
               name="lastName"
@@ -104,7 +106,9 @@ const ContactForm = ({
             />
           </div>
           <div>
-            <label htmlFor="email">Email *Required</label>
+            <label for="email" htmlFor="email">
+              Email *Required
+            </label>
             <br />
             <input
               name="email"
@@ -116,7 +120,9 @@ const ContactForm = ({
             />
           </div>
           <div>
-            <label htmlFor="company name">Company Name</label>
+            <label for="companyName" htmlFor="company name">
+              Company Name
+            </label>
             <br />
             <input
               name="companyName"
@@ -128,7 +134,9 @@ const ContactForm = ({
             />
           </div>
           <div className="col-span-2">
-            <label htmlFor="how can we help?">How can we help?</label>
+            <label for="howCanWeHelp?" htmlFor="howCanWeHelp?">
+              How can we help?
+            </label>
             <br />
             <select
               name="howCanWeHelp"
@@ -142,7 +150,9 @@ const ContactForm = ({
             </select>
           </div>
           <div className="col-span-2">
-            <label htmlFor="message">Message *Required</label>
+            <label for="message" htmlFor="message">
+              Message *Required
+            </label>
             <br />
             <textarea
               name="message"
